@@ -1,4 +1,252 @@
-<section id="latest" class="last">
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AROC - A Tool for Automated Controller Synthesis</title>
+
+	<meta name="author" content="TODO"> <!-- TODO -->
+	<meta name="description" content="TODO"><!-- TODO -->
+	<meta name="keywords" content="AROC, TODO"><!-- TODO -->
+
+	<link rel="icon" type="image/x-icon" href="../../data/images/ArocLogo-icon.png">
+	<!-- Compatibility Mode -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	
+	<!-- Font Newsreader--> 
+	<link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet">
+
+	<!-- Bootstrap css--> 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link href="../../styles/css.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+	<!-- Timeline -->
+	<link href="../../styles/timeline.css" rel="stylesheet">
+
+	<!-- Publication list -->
+	<script src="https://unpkg.com/bibtex-js-parser/umd/bibtex-js-parser.js"></script>
+	<script src="../../scripts/addPublication.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar bg-dark navbar-expand-lg fixed-top" data-bs-theme="dark">
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+				aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="../../index.html"> <img src="../../data/images/ArocLogo-icon.png"/></a>
+		<div class="collapse navbar-collapse" id="navbarToggler">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item navbar-text">
+					<div class="d-block d-lg-none">
+						<hr/>
+					</div>
+				</li>
+				<li class="nav-item">
+                    <a class="nav-link" href="#workshop">Workshop Papers</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="#AROCpubs">AROC Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#usingAROC">Publications using AROC</a>
+                </li>
+				<li class="nav-item navbar-text">
+					<div class="d-block d-lg-none">
+						<hr/>
+					</div>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://github.com/TUMcps/Aroc"><i class="bi bi-github"></i> GitHub</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="../../manual/index.html"><i class="bi bi-file-earmark-pdf-fill"></i> Manual</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="../../pages/publications/index.html"><i class="bi bi-file-text-fill"></i> Publications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="../../pages/archive/index.html"><i class="bi bi-archive-fill"></i> Archive</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" target="_blank" href="https://de.mathworks.com/matlabcentral/fileexchange/81923-aroc"><i
+							class="bi bi-box-seam-fill"></i> Matlab</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="row space-before">
+        <div class="col-12 col-lg-6 col-xl-8 order-1 order-lg-0">
+            <h2>Publications</h2>
+            <p>Overview of the publications of AROC.</p>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4 order-0 order-lg-1 text-center">
+            <div class="row">
+                <div class="col-3 col-sm-3 col-lg-2"></div>
+                <div class="col-6 col-sm-6 col-lg-8">
+                    <object type="image/svg+xml" data="../../data/images/ArocLogo.png">
+                        Your browser does not support SVG
+                    </object>
+                </div>
+            </div>
+        </div>
+		<div class="col-12 order-2">
+            <p>To cite AROC, please use the following reference:</p>
+            <div class="card position-relative" style="font-weight: normal; background-color: #F5F5F5">
+                <!-- the code lines below need the same indentation as one the displayed page! -->
+                <!-- also, if <code> is moved to a newline, there is another blank line in the code segment -->
+                <pre style="margin: 0"><code> @inproceedings{kochdumper2021aroc,
+	title			={AROC: A toolbox for automated reachset optimal controller synthesis},
+	author			={Kochdumper, Niklas and Gruber, Felix and Sch{\"u}rmann, Bastian and Ga{\ss}mann, Victor and Klischat, Moritz and Althoff, Matthias},
+	booktitle		={Proceedings of the 24th International Conference on Hybrid Systems: Computation and Control},
+	pages			={1--6},
+	year			={2021}
+}</code></pre>
+                <div class="position-absolute top-0 end-0 translate-middle-x">
+                    <div class="code-btn-box">
+                        <a class="btn btn-outline-secondary btn-sm"
+
+						   href="https://mediatum.ub.tum.de/export/1615633/bibtex"
+                           title="Download bibtex"><i class="bi bi-download"></i></a>
+						<!--  href="../../data/bib/using/bsp.bib" -->
+					</div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+	<ul class="list-group list-group-flush">
+        <li id="workshop" class="list-group-item px-0">
+            <a class="btn" data-bs-toggle="collapse" href="#collapse_workshop" role="button"
+               aria-expanded="true"
+               aria-controls="collapse_workshop">
+                <div class="row">
+                    <div class="col-11"><h4>Workshop Papers</h4></div>
+                    <div class="col-1"><span class="mr-3"></span></div>
+                </div>
+            </a>
+            <div class="collapse show" id="collapse_workshop">
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            TMP Aroc workshop.
+                        </p>
+                        <div class="space-before-sm"></div>
+
+                        <ul class="timeline-with-icons" id="workshop_papers"> </ul>
+
+                        <script>
+                            pubs = [
+                                {bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
+								{bibtex: "bsp2.bib", type: 'paper'},
+								{bibtex: "bsp3.bib", type: 'paper'},
+                                // {bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
+                            ];
+                            addPublicationsFromLink('workshop_papers', 'workshop', pubs);
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+        <li id="AROCpubs" class="list-group-item px-0">
+            <a class="btn" data-bs-toggle="collapse" href="#collapse_AROCpubs" role="button"
+               aria-expanded="true"
+               aria-controls="collapse_AROCpubs">
+                <div class="row">
+                    <div class="col-11"><h4>AROC Publications</h4></div>
+                    <div class="col-1"><span class="mr-3"></span></div>
+                </div>
+            </a>
+            <div class="collapse show" id="collapse_AROCpubs">
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            The novelties in the papers below are implemented in AROC.
+                        </p>
+                        <div class="space-before-sm"></div>
+
+                        <ul class="timeline-with-icons" id="AROCpubs_papers"> </ul>
+
+                        <script>
+                            pubs = [
+								{bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
+								{bibtex: "bsp2.bib", type: 'paper'},
+								{bibtex: "bsp3.bib", type: 'paper'},
+                              ];
+                            addPublicationsFromLink('AROCpubs_papers', 'features', pubs);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li id="usingAROC" class="list-group-item px-0">
+            <a class="btn" data-bs-toggle="collapse" href="#collapse_usingAROC" role="button"
+               aria-expanded="true"
+               aria-controls="collapse_usingAROC">
+                <div class="row">
+                    <div class="col-11"><h4>Publications using AROC</h4></div>
+                    <div class="col-1"><span class="mr-3"></span></div>
+                </div>
+            </a>
+            <div class="collapse show" id="collapse_usingAROC">
+                <div class="row">
+                    <div class="col-12">
+                        <p> Using Aroc </p>
+                        <p> <a href="../../index.html#contact">Let us know</a> if any of your publications is missing! </p>
+
+                        <div class="space-before-sm"></div>
+
+                        <ul class="timeline-with-icons" id="usingAROC_papers"> </ul>
+
+                        <script>
+                            pubs = [
+								{bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
+								{bibtex: "bsp2.bib", type: 'paper'},
+								{bibtex: "bsp3.bib", type: 'paper'},
+                               ];
+                            addPublicationsFromLink('usingAROC_papers', 'using', pubs);
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item px-0"></li> <!-- empty last item to have line underneath previous item -->
+    </ul>
+
+	  <!-- footer -->
+	  <div class="row space-before">
+		<hr/>
+		<div class="col-12 col-md-6">Copyright &copy; 2022 - All Rights Reserved - <a href="https://www.tum.de/en/" target="_blank">Technische Universit&auml;t M&uuml;nchen</a></div>
+	  <div class="col-12 col-md-6">Website by <a href="https://www6.in.tum.de/people/niklas-kochdumper-msc/" target="_blank">Niklas Kochdumper, YongKuan Zhang, Wei-Chi Huang & <a href="http://www.os-templates.com/" title="Free Website Templates" target="_blank">OS Templates</a></div>
+	  </div>
+
+</div>
+
+  <!-- Load Bootstrap at the very end -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+	crossorigin="anonymous"></script>
+<script>
+	const navLinks = document.querySelectorAll('.nav-item')
+	const menuToggle = document.getElementById('navbarToggler')
+	const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false})
+
+	navLinks.forEach((l) => {
+	l.addEventListener('click', () => { bsCollapse.toggle() })
+	})
+
+</script>
+<!-- <section id="latest" class="last">
 	<p style="color:white;">PLACEHOLDER</p>
 	<h1 style="color:black;">Publications</h1>
 	<p style="color:white;"></p>
@@ -16,4 +264,5 @@
 	    </td>
 	  </tr>
 	</table>
-      </section>
+      </section>. -->
+</html>
