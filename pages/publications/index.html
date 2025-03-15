@@ -123,38 +123,42 @@
             </div>
         </div>
 	</div>
-
+    <!-- Publication List Section -->
 	<ul class="list-group list-group-flush">
-        <li id="workshop" class="list-group-item px-0">
+        <li id="workshop" class="list-group-item px-0"> <!-- id used for navigation bar reference -->
             <a class="btn" data-bs-toggle="collapse" href="#collapse_workshop" role="button"
                aria-expanded="true"
-               aria-controls="collapse_workshop">
+               aria-controls="collapse_workshop"> <!-- href and controls -->
+                <!-- Controls the collapsible section -->
                 <div class="row">
-                    <div class="col-11"><h4>Workshop Papers</h4></div>
-                    <div class="col-1"><span class="mr-3"></span></div>
+                    <div class="col-11"><h4>Workshop Papers</h4></div> <!-- Section Title -->
+                    <div class="col-1"><span class="mr-3"></span></div> <!-- Placeholder for spacing -->
                 </div>
             </a>
+            <!-- Collapsible content container -->
             <div class="collapse show" id="collapse_workshop">
                 <div class="row">
                     <div class="col-12">
                         <p>
-                            TMP Aroc workshop.
+                            TMP Aroc workshop. <!-- Description of the workshop -->
                         </p>
                         <div class="space-before-sm"></div>
-
+                        <!-- List container for dynamically added workshop papers -->
                         <ul class="timeline-with-icons" id="workshop_papers"> </ul>
 
                         <script>
+                            // Define an array of publications with metadata
                             pubs = [
                                 {bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
-								{bibtex: "bsp2.bib", type: 'paper'},
-								{bibtex: "bsp3.bib", type: 'paper'},
+								{bibtex: "bsp2.bib", type: 'paper'}, // Entry without PDF link
+								{bibtex: "bsp3.bib", type: 'paper'}, // Entry without PDF link
+                                // Example of another publication (commented out)
                                 // {bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
                             ];
+                            // Function call to dynamically populate the workshop paper list
                             addPublicationsFromLink('workshop_papers', 'workshop', pubs);
                         </script>
                     </div>
-
                 </div>
             </div>
         </li>
