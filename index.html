@@ -52,6 +52,9 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
                       <li><a class="dropdown-item" href="#conformant-synthesis">Conformant Synthesis</a></li>
                   </ul>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#get-started">Get Started</a>
+              </li>
 
               <li class="nav-item">
                   <a class="nav-link dropdown-toggle" href="#videos" role="button" data-bs-toggle="dropdown" aria-expanded="false">Videos</a>
@@ -201,7 +204,44 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
     </div>
   </div>
 
-  <!-- Videos -->
+    <!-- Getting Started -->
+    <hr id="get-started" class="flyin"/>
+    <div class="row space-before flyin">
+        <h4>Get Started</h4>
+        <p>To install AROC, please follow the steps below:</p>
+        <div>
+            <ol>
+                <li>Install <a href="https://de.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>.</li>
+                <li>Download the AROC toolbox:
+                    <ul>
+                        <li>Option 1: Clone the repository from <a target="_blank" href="https://github.com/TUMcps/AROC"><i class="bi bi-github"></i> GitHub</a>.</li>
+                        <li>Option 2: Download the latest release from <a href="https://tumcps.github.io/AROC/data/AROC_2022.zip" target="_blank">AROC Toolbox (.zip | Release 2022)</a>.</li>
+                    </ul>
+                </li>
+                <li>Add the AROC directory to your MATLAB path.</li>
+                <li>Install required dependencies:
+                    <ul>
+                        <li><b>CORA</b>: A MATLAB toolbox for reachability analysis. Compatible with the <b>2022 release</b>. Download from <a href="http://cora.in.tum.de" target="_blank">CORA Official Website</a> or <a href="https://github.com/TUMcps/CORA" target="_blank">GitHub Repository</a>. Add the CORA directory to your MATLAB path.</li>
+                        <li><b>ACADO</b> (optional): A C++ toolbox for solving optimal control problems. AROC works without it, but computations may be slower. Install the MATLAB interface from <a href="http://acado.github.io/matlab_overview.html" target="_blank">ACADO MATLAB Interface</a>.</li>
+                        <li><b>MPT and YALMIP</b>: Required for geometric computations and optimization problems. Install them using the instructions from <a href="https://www.mpt3.org/Main/Installation" target="_blank">MPT3 Installation Guide</a>.</li>
+                    </ul>
+                </li>
+                <li>Run the following script in MATLAB to check the installation:
+                    <pre><code>
+            addpath(genpath('path_to_aroc'))
+            savepath
+            </code></pre>
+                </li>
+                <li>Verify the installation by running the AROC unit tests (recommended). See <a target="_blank" href="./manual/index.html"><i class="bi bi-file-earmark-pdf-fill"></i> AROC Manual</a> for details.</li>
+            </ol>
+        </div>
+
+        <p>
+            Congratulations, you have successfully installed AROC!
+        </p>
+    </div>
+
+    <!-- Videos -->
   <!-- <hr id="videos" class="flyin"/> -->
   <!-- <div class="row space-before flyin">
     <h4>Videos</h4> -->
