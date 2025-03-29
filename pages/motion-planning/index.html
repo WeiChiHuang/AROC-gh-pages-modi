@@ -1,1 +1,145 @@
-motion-planning
+<!-- <h2 class="title" style="color:black;">Archive</h2>
+<nav>
+  <ul>
+    <li><a href="https://tumcps.github.io/AROC/data/AROC_2020.zip">AROC Toolbox (.zip | Release 2020)</a></li>
+<li><a href="https://tumcps.github.io/AROC/data/AROC_2020.mltbx">AROC Toolbox (.mltbx | Release 2020)</a></li>
+    <li><a href="https://tumcps.github.io/AROC/data/Aroc2020Manual.pdf" target="_blank">AROC Manual (Release 2020)</a></li>
+  </ul>
+</nav> -->
+
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motion Planning | AROC - A Tool for Automated Controller Synthesis</title>
+
+    <meta name="author" content="TODO"> <!-- TODO -->
+    <meta name="description" content="TODO"><!-- TODO -->
+    <meta name="keywords" content="AROC, TODO"><!-- TODO -->
+
+    <link rel="icon" type="image/x-icon" href="../../data/images/ArocLogo-icon.png">
+    <!-- Compatibility Mode -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- Font Newsreader-->
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet">
+
+    <!-- Bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="../../styles/css.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Timeline -->
+    <link href="../../styles/timeline.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+<nav class="navbar bg-dark navbar-expand-lg fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"> <img src="../../data/images/ArocLogo-icon.png"/></a>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item navbar-text">
+                    <div class="d-block d-lg-none">
+                        <hr/>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#motion-planning">Motion Planning</a>
+                </li>
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" href="#release-notes">Release Notes</a>-->
+                <!--                </li>-->
+                <li class="nav-item navbar-text">
+                    <div class="d-block d-lg-none">
+                        <hr/>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://github.com/TUMcps/Aroc"><i class="bi bi-github"></i> GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="../../manual/index.html"><i class="bi bi-file-earmark-pdf-fill"></i> Manual</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../pages/publications/index.html"><i class="bi bi-file-text-fill"></i> Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../../pages/archive/index.html"><i class="bi bi-archive-fill"></i> Archive</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://de.mathworks.com/matlabcentral/fileexchange/81923-aroc"><i
+                            class="bi bi-box-seam-fill"></i> Matlab</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container" id="motion-planning">
+    <div class="row space-before">
+        <div class="col-12 col-lg-6 col-xl-8 order-0 order-md-0">
+            <h2><b>Model Predictive Control</b></h2>
+            <p>
+                Given an offline constructed maneuver automaton,
+                <strong><span style="color:DodgerBlue;">motion planning</span></strong>
+                is reduced to the task of solving a classical search problem (see Fig. 12),
+                which can be implemented very efficiently and is therefore well suited for online control.
+                In AROC, online <strong><span style="color:DodgerBlue;">motion planning</span></strong>
+                with a maneuver automaton is implemented in the function <code>motionPlanner</code>:
+            </p>
+
+        </div>
+        <div class="col-12 col-lg-6 col-xl-4 order-0 order-lg-1 text-center">
+            <img class="img-fluid" src="../../data/images/MotionPlanning.svg"
+                 alt="">
+        </div>
+    </div>
+
+    <!-- Version Section -->
+    <!-- ID for navigation reference -->
+    <hr id="versions"/>
+    <div class="row space-before">
+        <div class="col-12">
+            <!-- Section title -->
+            <h4>Intro</h4>
+        </div>
+
+
+    </div>
+
+    <!-- footer -->
+    <div class="row space-before">
+        <hr/>
+        <div class="col-12 col-md-6">Copyright &copy; 2022 - All Rights Reserved - <a href="https://www.tum.de/en/" target="_blank">Technische Universit&auml;t M&uuml;nchen</a></div>
+        <div class="col-12 col-md-6">Website by <a href="https://www6.in.tum.de/people/niklas-kochdumper-msc/" target="_blank">Niklas Kochdumper, YongKuan Zhang, Wei-Chi Huang & <a href="http://www.os-templates.com/" title="Free Website Templates" target="_blank">OS Templates</a><</a></div>
+    </div>
+
+</div>
+
+<!-- Load Bootstrap at the very end -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script>
+    const navLinks = document.querySelectorAll('.nav-item')
+    const menuToggle = document.getElementById('navbarToggler')
+    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false})
+
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => { bsCollapse.toggle() })
+    })
+
+</script>
+</body>
+</html>
