@@ -34,7 +34,11 @@
     <!-- Timeline -->
     <link href="../../styles/timeline.css" rel="stylesheet">
 
-
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 
 <body>
@@ -53,8 +57,15 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#model-predictive-control">Model Predictive Control</a>
+                    <a class="nav-link dropdown-toggle" href="#model-predictive-control" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Model Predictive Control
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#stirredtankreactor">Stirred Tank Reactor</a></li>
+                    </ul>
                 </li>
+
                 <!--                <li class="nav-item">-->
                 <!--                    <a class="nav-link" href="#release-notes">Release Notes</a>-->
                 <!--                </li>-->
@@ -88,63 +99,87 @@
 
 <div class="container" id="model-predictive-control">
     <div class="row space-before">
-        <div class="col-12 col-lg-6 col-xl-8 order-0 order-md-0">
+        <div class="col-12 col-lg-6 col-xl-6 order-0 order-md-0">
             <h2><b>Model Predictive Control</b></h2>
             <p>
-                Model predictive control (MPC) aims to stabilize the system for an infinite time horizon
-                <em>t<sub>f</sub> = ∞</em>. To achieve this, we consider a terminal region <em>𝒯</em>
-                (see Sec. 4) around the equilibrium point <em>x<sub>f</sub> ∈ 𝒯</em> for which we have a controller that is guaranteed
-                to stabilize the system around <em>x<sub>f</sub></em> for all states inside the terminal region.
+                Reachset MPC
+                AROC provides a reachset-based model predictive control (MPC) implementation for nonlinear systems affected by disturbances and measurement errors. The algorithm stabilizes the system over an infinite horizon by driving it into a predefined terminal region using a cost-optimal tracking controller. Reachability analysis ensures satisfaction of input and state constraints during the control computation. The implementation supports tightened input constraints, contraction constraints for finite-time convergence, and integrates with CORA for set-based computations.
             </p>
-
-            <p>
-                The goal is then to synthesize a suitable control law <em>u<sub>c</sub>(x̂(t), t)</em> that drives
-                the system from its current state to the terminal region while minimizing the cost function:
-            </p>
-
-            <p style="text-align: center;">
-                J(x, u) = (x(t<sub>opt</sub>) − x<sub>f</sub>)<sup>T</sup> · Q · (x(t<sub>opt</sub>) − x<sub>f</sub>) +
-                ∫<sub>t=0</sub><sup>t<sub>opt</sub></sup> u(t)<sup>T</sup> · R · u(t) dt
-                <br><em>(11)</em>
-            </p>
-
-            <p>
-                where <em>t<sub>opt</sub></em> is the lookahead time. For controller synthesis we then apply
-                the following procedure (commonly used in MPC):
-            </p>
-
-            <ol>
-                <li>
-                    Based on the current measurement of the system state <em>x̂(t)</em>, we compute an optimal
-                    control law <em>u<sub>c</sub>(x̂(t), t)</em> that minimizes the cost function <em>J(x, u)</em> and guarantees that
-                    the system reaches the terminal region <em>𝒯</em> after time <em>t<sub>opt</sub></em>.
-                </li>
-                <li>
-                    We apply the optimal control law <em>u<sub>c</sub>(x̂(t), t)</em> for the time period
-                    <em>t ∈ [0, t<sub>opt</sub>/N]</em>, where <em>N</em> is the number of time steps.
-                </li>
-                <li>
-                    We measure the system state and try to compute a control law <em>u<sub>c</sub>(x̂(t), t)</em>
-                    with lower costs than the old control law <em>u<sub>c</sub>(x̂(t), t)</em> based on the updated system state.
-                </li>
-            </ol>
 
         </div>
-        <div class="col-12 col-lg-6 col-xl-4 order-0 order-lg-1 text-center">
-            <img class="img-fluid" src="../../data/images/ModelPredicitiveControl.svg"
-                 alt="Model Predictive Control Illustration">
+        <div class="col-12 col-lg-6 col-xl-6 order-0 order-lg-1 text-center">
+            <object id="mpc-svg" type="image/svg+xml" data="../../data/images/MPC-animate-clean-loop.svg">
+                Your browser does not support SVG
+            </object>
         </div>
     </div>
 
-    <!-- Version Section -->
+    <!-- Stirred Tank Reactor Section -->
     <!-- ID for navigation reference -->
-    <hr id="versions"/>
+    <hr id="stirredtankreactor"/>
     <div class="row space-before">
         <div class="col-12">
             <!-- Section title -->
-            <h4>Intro</h4>
+            <h4>Stirred Tank Reactor</h4>
+            <p>The next benchmark is taken from [13, Sec. 5] and considers an exothermic, irreversible reaction<br>
+                A &rarr; B of the reactant A to the product B inside a stirred tank reactor (see Fig. 11).</p>
+
+            <figure>
+                <img src="../../data/images/SirredTankReactor.png" alt="Visualization of the stirred tank reactor benchmark system" style="width:50%;">
+                <figcaption>Figure 11: Visualization of the stirred tank reactor benchmark system.</figcaption>
+            </figure>
+
+            <p>The system dynamics for the stirred tank reactor is as follows [13, Eq. (15)]:</p>
+
+            <p style="text-align: center;">
+                \( \dot{x}_1 = \frac{q}{V}(C_{Af} - (x_1 + C_A^{eq})) - k_0 \cdot e^{-E/(R(x_2 + T^{eq}))} \cdot (x_1 + C_A^{eq}) + w_1 \)<br><br>
+                \( \dot{x}_2 = \frac{q}{V}(T_f - (x_2 + T^{eq})) - \frac{\Delta H}{\rho \cdot C_p} k_0 \cdot e^{-E/(R(x_2 + T^{eq}))} \cdot (x_1 + C_A^{eq}) + \frac{UA}{V \cdot \rho \cdot C_p} (u + T_c^{eq} - (x_2 + T^{eq})) + w_2 \)
+            </p>
+
+            <p>
+                where the system states are the difference of the concentration of reactant A from the equilibrium point \( x_1 = C_A - C_A^{eq} \) and the difference of the reactor temperature from the equilibrium point \( x_2 = T - T^{eq} \), and the system input is the difference of the cooling stream temperature from the equilibrium point \( u = T_c - T_c^{eq} \).
+            </p>
+
+            <p>The parameters are defined as:</p>
+
+            <ul>
+                <li>\( C_A^{eq} = 0.5 \ mol/L \)</li>
+                <li>\( T^{eq} = 350 \ K \)</li>
+                <li>\( T_c^{eq} = 300 \ K \)</li>
+                <li>\( q = 5/3 \ l/s \)</li>
+                <li>\( T_f = 350 \ K \)</li>
+                <li>\( V = 100 \ l \)</li>
+                <li>\( \rho = 1000 \ g/l \)</li>
+                <li>\( C_p = 0.239 \ J/g/K \)</li>
+                <li>\( \Delta H = -5 \times 10^4 \ J/mol \)</li>
+                <li>\( E/R = 8750 \ K \)</li>
+                <li>\( k_0 = \frac{7.2}{60} \times 10^{10} \ s^{-1} \)</li>
+                <li>\( UA = \frac{1}{12} \times 10^4 \ J/s/K \)</li>
+            </ul>
+
+            <p>The input constraint is \(u \in [-20, 70] K\) and the set of disturbances is \(w_1 \in [-0.1, 0.1] mol/l/s\) and \(w_2 \in [-2, 2] K/s\).</p>
+
+            <p>Furthermore, we consider the initial set \(x_1(0) \in [-0.17, -0.13] mol/l\) and \(x_2(0) \in [-48, -43] K\).</p>
+
+            <p>The differential equation describing the stirred tank reactor is implemented in the file <code>/benchmarks/dynamics/stirredTankReactor.m</code>, and the parameters for the system are specified in the file <code>/benchmarks/parameter/param_stirredTankReactor.m</code>. The name of the benchmark is <code>'stirredTankReactor'</code>.</p>
+
+        </div>
+        <div class="col-12">
+            <h5>Example</h5>
+            <div class="position-relative">
+                <iframe class="code code-lg"
+                        src="../../data/matlab/scripts/website/modelPredictiveControl/example_reachsetMPC_artificialSystem1.html"></iframe>
+                <div class="position-absolute top-0 end-0 translate-middle-x">
+                    <div class="code-btn-box">
+                        <a class="btn btn-outline-secondary btn-sm"
+                           href="../../data/matlab/scripts/website/modelPredictiveControl/example_reachsetMPC_artificialSystem1.mlx"
+                           title="Download as MATLAB Live Script"><i class="bi bi-download"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
 
+    </div>
 
     </div>
 
@@ -171,5 +206,16 @@
     })
 
 </script>
+<!--<script>-->
+<!--    setInterval(() => {-->
+<!--        const obj = document.getElementById("mpc-svg");-->
+<!--        const src = obj.data;-->
+<!--        obj.data = ""; -->
+<!--        setTimeout(() => {-->
+<!--            obj.data = src;-->
+<!--        }, 20);-->
+<!--    }, 5500);-->
+<!--</script>-->
+
 </body>
 </html>
