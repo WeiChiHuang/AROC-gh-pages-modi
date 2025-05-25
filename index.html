@@ -45,11 +45,20 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
                       Features
                   </a>
                   <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#combined-control">Combined Control</a></li>
+                      <li><a class="dropdown-item" href="#conformant-synthesis">Conformant Synthesis</a></li>
+                      <li><a class="dropdown-item" href="#convex-interpolation-control">Convex Interpolation Control</a></li>
+                      <li><a class="dropdown-item" href="#generator-space-control">Generator Space Control</a></li>
+                      <li><a class="dropdown-item" href="#lin-sys-mpc">LinSysMPC</a></li>
+                      <li><a class="dropdown-item" href="#maneuver-automaton">Maneuver Automaton</a></li>
+                      <li><a class="dropdown-item" href="#optimization-based-control">Optimization Based Control</a></li>
+                      <li><a class="dropdown-item" href="#polynomial-control">Polynomial Control</a></li>
                       <li><a class="dropdown-item" href="#motion-primitive-based-control">Motion Primitive Based Control</a></li>
                       <li><a class="dropdown-item" href="#model-predictive-control">Model Predictive Control</a></li>
+                      <li><a class="dropdown-item" href="#safety-net-control">Safety Net Control</a></li>
                       <li><a class="dropdown-item" href="#motion-planning">Motion Planning</a></li>
                       <li><a class="dropdown-item" href="#safe-terminal-regions">Safe Terminal Regions</a></li>
-                      <li><a class="dropdown-item" href="#conformant-synthesis">Conformant Synthesis</a></li>
+
                   </ul>
               </li>
               <li class="nav-item">
@@ -134,7 +143,170 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
   </div>
 
   <!-- Features -->
-  <!-- Motion Primitive Based Control -->
+  <!-- Combined Control-->
+    <hr id="combined-control" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Combined Control</h5>
+            <p>To ensure fast and robust disturbance rejection while respecting system constraints, the combined control integrates optimization-based feedback with generator space feed-forward control. The optimization-based feedback ensures constraint satisfaction and robustness, while the feed-forward component improves responsiveness by generating initial-state-dependent reference trajectories. This combined approach enables the use of more aggressive feedback laws without sacrificing safety.</p>
+            <div class="text-start"><a href="./pages/combined-control/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="combinedControl_2-svg" type="image/svg+xml" data="data/images/latex/figures/combinedControl/combinedControl_2.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Conformant Synthesis -->
+    <hr id="conformant-synthesis" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Conformant Synthesis</h5>
+            <p>To guarantee that the synthesized controllers are safe for the real system and not just for a given model we require over-approximative models that enclose all possible behaviors of the real system. The conformant synthesis algorithms in AROC can be used to construct such over-approximative models automatically from measurements of the real system.</p>
+            <div class="text-start"><a href="./pages/conformant-synthesis/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="conformantSynthesis_car_1-svg" type="image/svg+xml" data="data/images/latex/figures/conformantSynthesis/conformantSynthesis_car_1.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Convex Interpolation Control-->
+    <hr id="convex-interpolation-control" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Convex Interpolation Control</h5>
+            <p>
+                Convex Interpolation Control is a discrete-time feedback method that computes optimal control inputs at the
+                vertices of a parallelotope enclosing the reachable set at each time step. The final control input is obtained
+                by interpolating between these vertex solutions.
+            </p>
+            <p>
+                This approach provides a robust yet efficient control scheme by reducing online computational effort.
+                For practical use, the interpolation law can be simplified using linear or quadratic approximations.
+                Compared to optimization-based continuous feedback, this method evaluates the system state only at the beginning
+                of each control step and applies piecewise constant inputs within that interval.
+            </p>
+            <div class="text-start"><a href="./pages/convex-interpolation-control/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="convexInterpolationControl_car_e_1-svg" type="image/svg+xml" data="data/images/latex/figures/convexInterpolationControl/convexInterpolationControl_car_e_1.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Generator Space Control-->
+    <hr id="generator-space-control" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Generator Space Control</h5>
+            <p>
+                Generator Space Control offers a computationally efficient alternative to Convex Interpolation Control by
+                reducing the number of required optimal control problems. While Convex Interpolation Control solves one
+                problem per vertex of a parallelotope (which grows exponentially with system dimension <em>n</em>),
+                Generator Space Control solves only one problem per generator—resulting in linear scaling.
+            </p>
+            <p>
+                This efficiency gain is achieved by operating in the generator space of the reachable set instead of its vertex representation,
+                significantly reducing online computation for high-dimensional systems.
+            </p>
+            <div class="text-start"><a href="./pages/generator-space-control/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="generatorSpaceControl_car_1-svg" type="image/svg+xml" data="data/images/latex/figures/generatorSpaceControl/generatorSpaceControl_car_1.tikz.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- LinSysMPC-->
+    <hr id="lin-sys-mpc" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>LinSysMPC</h5>
+            <p>Description TODO </p>
+            <div class="text-start"><a href="./pages/lin-sys-mpc/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="linSysMPC_double-svg" type="image/svg+xml" data="data/images/latex/figures/linSysMPC/linSysMPC_double.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Maneuver Automaton-->
+    <hr id="maneuver-automaton" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Maneuver Automaton</h5>
+            <p>
+                The maneuver automaton provides a discrete abstraction of the continuous control problem by encoding reachable
+                configurations as states and feasible motion primitives as transitions. During online operation, motion plans
+                are generated by traversing the automaton while ensuring collision-free and dynamically feasible trajectories.
+            </p>
+            <div class="text-start"><a href="./pages/maneuver-automaton/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="maneuverAutomaton_car1_1-svg" type="image/svg+xml" data="data/images/latex/figures/maneuverAutomaton/maneuverAutomaton_car1_1.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Optimization Based Control-->
+    <hr id="optimization-based-control" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Optimization Based Control</h5>
+            <p>
+                Optimization-based Control implements the algorithm, originally designed for linear systems.
+                We extended this approach to also support nonlinear system dynamics.
+            </p>
+            <p>
+                To ensure computational efficiency, the implementation automatically detects whether the system is linear or nonlinear
+                and applies the corresponding reachability analysis. This adaptive strategy enables both robustness and performance
+                across a broad class of systems.
+            </p>
+            <div class="text-start"><a href="./pages/optimization-based-control/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="optimizationBasedControl_car_1-svg" type="image/svg+xml" data="data/images/latex/figures/optimizationBasedControl/optimizationBasedControl_car_1.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Optimization Based Control-->
+    <hr id="polynomial-control" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Polynomial Control</h5>
+            <p>
+                The <strong>Polynomial Control</strong> approach, extends the generator space control method
+                by applying a <em>polynomial</em> rather than a linear control law. Instead of solving optimal control problems, this method leverages
+                <strong>dependency preservation</strong> on <strong>polynomial zonotopes</strong> to compute control parameters efficiently.
+            </p>
+            <p>
+                The process involves two main steps: (1) computing the reachable set for all admissible control parameter values,
+                and (2) selecting the parameters that minimize the size of the final reachable set using the analytical relation
+                between parameters and reachable states.
+            </p>
+            <p>
+                This enables a more expressive and efficient control strategy for systems where nonlinear control laws provide tighter enclosures.
+            </p>
+            <div class="text-start"><a href="./pages/polynomial-control/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <object id="polynomialControl_car_1-svg" type="image/svg+xml" data="data/images/latex/figures/polynomialControl/polynomialControl_car_1.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+    </div>
+
+    <!-- Motion Primitive Based Control -->
   <hr id="motion-primitive-based-control" class="flyin"/>
   <div class="row space-before flyin">
     <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
@@ -156,13 +328,32 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
       <p>For model predictive control the controller is constructed and verified at runtime, where the computation time required for the optimization based construction of the controller as well as the verification with reachability analysis is explicitely considered by the algorithm.</p>
       <div class="text-start"><a href="./pages/model-predictive-control/index.html" class="btn btn-primary">Read more</a></div>
     </div>
-    <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
-        <object id="mpc-svg" type="image/svg+xml" data="./data/images/latex/figures/MPC/MPC.svg">
-            Your browser does not support SVG
-        </object>
-      <div class="space-before-xs"></div>
-    </div>
+      <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+          <img src="data/images/motion_primitives.png" alt="">
+          <div class="space-before-xs"></div>
+      </div>
+<!--    <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">-->
+<!--        <object id="mpc-svg" type="image/svg+xml" data="./data/images/motion_primitives.png">-->
+<!--            Your browser does not support SVG-->
+<!--        </object>-->
+<!--      <div class="space-before-xs"></div>-->
+<!--    </div>-->
   </div>
+
+    <!-- Optimization Based Control-->
+    <hr id="safety-net-control" class="flyin"/>
+    <div class="row space-before flyin">
+        <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
+            <h5>Safety Net Control</h5>
+            <p>Description TODO </p>
+            <div class="text-start"><a href="./pages/safety-net-control/index.html" class="btn btn-primary">Read more</a></div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+            <img src="data/images/" alt="">
+            <div class="space-before-xs"></div>
+        </div>
+    </div>
+
 
   <!-- Motion Planning -->
   <hr id="motion-planning" class="flyin"/>
@@ -173,7 +364,7 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
       <div class="text-start"><a href="./pages/motion-planning/index.html" class="btn btn-primary">Read more</a></div>
     </div>
     <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
-      <img src="data/images/MotionPlanning.png" alt="">
+      <img src="data/images/MotionPlanningAutomaton.png" alt="">
       <div class="space-before-xs"></div>
     </div>
   </div>
@@ -186,25 +377,14 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
       <p>Also algorithms for constructing controllers that stabilize a system around a given equilibrium point and aim to maximize the size of the corresponding safe terminal region are part of AROC. The resulting terminal regions are well suited to be used in combination with model predictive control approaches.</p>
       <div class="text-start"><a href="./pages/safe-terminal-regions/index.html" class="btn btn-primary">Read more</a></div>
     </div>
-    <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
-      <img src="data/images/TerminalRegion.png" alt="">
-      <div class="space-before-xs"></div>
-    </div>
+      <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
+          <object id="terminalRegion_platoon-svg" type="image/svg+xml" data="data/images/latex/figures/terminalRegion/terminalRegion_platoon.svg">
+              Your browser does not support SVG
+          </object>
+      </div>
   </div>
   
-  <!-- Conformant Synthesis -->
-  <hr id="conformant-synthesis" class="flyin"/>
-  <div class="row space-before flyin">
-    <div class="col-12 col-md-6 col-xl-8 order-1 order-md-0">
-      <h5>Conformant Synthesis</h5>
-      <p>To guarantee that the synthesized controllers are safe for the real system and not just for a given model we require over-approximative models that enclose all possible behaviors of the real system. The conformant synthesis algorithms in AROC can be used to construct such over-approximative models automatically from measurements of the real system.</p>
-      <div class="text-start"><a href="./pages/conformant-synthesis/index.html" class="btn btn-primary">Read more</a></div>
-    </div>
-    <div class="col-12 col-md-6 col-xl-4 order-0 order-md-1 text-center">
-      <img src="data/images/ConformantSynthesis.png" alt="">
-      <div class="space-before-xs"></div>
-    </div>
-  </div>
+
 
     <!-- Getting Started -->
     <hr id="get-started" class="flyin"/>

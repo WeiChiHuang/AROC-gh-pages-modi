@@ -46,14 +46,17 @@
 						<hr/>
 					</div>
 				</li>
-				<li class="nav-item">
-                    <a class="nav-link" href="#workshop">Workshop Papers</a>
-                </li>
-				<li class="nav-item">
-                    <a class="nav-link" href="#AROCpubs">AROC Publications</a>
-                </li>
+<!--				<li class="nav-item">-->
+<!--                    <a class="nav-link" href="#workshop">Workshop Papers</a>-->
+<!--                </li>-->
+<!--				<li class="nav-item">-->
+<!--                    <a class="nav-link" href="#AROCpubs">AROC Publications</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#usingAROC">Publications using AROC</a>-->
+<!--                </li>-->
                 <li class="nav-item">
-                    <a class="nav-link" href="#usingAROC">Publications using AROC</a>
+                    <a class="nav-link" href="#usingAROC">Tool Papers</a>
                 </li>
 				<li class="nav-item navbar-text">
 					<div class="d-block d-lg-none">
@@ -123,7 +126,7 @@
             </div>
         </div>
 	</div>
-    <!-- Publication List Section -->
+    <!-- Publication List-->
 	<ul class="list-group list-group-flush">
         <li id="workshop" class="list-group-item px-0"> <!-- id used for navigation bar reference -->
             <a class="btn" data-bs-toggle="collapse" href="#collapse_workshop" role="button"
@@ -140,7 +143,7 @@
                 <div class="row">
                     <div class="col-12">
                         <p>
-                            TMP Aroc workshop. <!-- Description of the workshop -->
+							Only the tool paper. <!-- Description of the workshop -->
                         </p>
                         <div class="space-before-sm"></div>
                         <!-- List container for dynamically added workshop papers -->
@@ -149,11 +152,16 @@
                         <script>
                             // Define an array of publications with metadata
                             pubs = [
-                                {bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
-								{bibtex: "bsp2.bib", type: 'paper'}, // Entry without PDF link
-								{bibtex: "bsp3.bib", type: 'paper'}, // Entry without PDF link
-                                // Example of another publication (commented out)
-                                // {bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
+								{bibtex: "Optimization_based_control.bib", type: 'conference', pdf: "https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017b.pdf", tags: ["motion primitive based control", "2017"]},
+								{bibtex: "convex_interpolation_control.bib", type: 'conference', pdf: "https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017a.pdf", tags: ["motion primitive based control", "2017"]},
+								{bibtex: "generator space control.bib", type: 'article', pdf: "https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017c.pdf", tags: ["motion primitive based control", "2017"]},
+                                {bibtex: "subpaving.bib", type: 'conference', pdf: "https://mediatum.ub.tum.de/doc/1379654/742323.pdf", tags: ["Model Predictive Control","terminal region", "2017"]},
+                                {bibtex: "reachset model predictive control.bib", type: 'conference', pdf: "https://mediatum.ub.tum.de/doc/1454141/document.pdf", tags: ["Model Predictive Control", "2018"]},
+                                {bibtex: "Model predictive control for lienar systems.bib", type: 'conference', pdf: "https://mediatum.ub.tum.de/doc/1524264/205786.pdf", tags: ["Model Predictive Control", "2019"]},
+								{bibtex: "polynomial control.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1624904/lhz63wbwypwbp48kl8byhejv0.root.pdf", tags: ["motion primitive based control", "2021"]},
+                                {bibtex: "combined control.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1636785/7bpxajkm94ekacq2mpxrg3go1.Schuermann-2021-TAC.pdf", tags: ["motion primitive based control", "2021"]},
+                                {bibtex: "zonoLinSys.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1553232/document.pdf", tags: ["Model Predictive Control","terminal region", "2021"]},
+                                {bibtex: "safety net control.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1633295/zv9aj1o9xifu0qblavor0q08s.Schuermann-2022-TAC.pdf", tags: ["motion primitive based control", "2022"]},
                             ];
                             // Function call to dynamically populate the workshop paper list
                             addPublicationsFromLink('workshop_papers', 'workshop', pubs);

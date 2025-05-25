@@ -9,22 +9,22 @@ async function addPublicationsFromLink(listId, subfolder, pubs) {
 
     // add publication; await required to maintain order
     if (pub.type === 'diss') {
-      await addDissFromLink(listId, bibtexlink, pdflink);
+      await addDissFromLink(listId, bibtexlink, pdflink, pub);
     } else {
-      await addPaperFromLink(listId, bibtexlink, pdflink);
+      await addPaperFromLink(listId, bibtexlink, pdflink, pub);
     }
   }
 }
 
-async function addPaperFromLink(listId, link, pdflink) {
-  await addPublicationFromLink(listId,link,pdflink,"bi-file-text");
+async function addPaperFromLink(listId, link, pdflink, pub) {
+  await addPublicationFromLink(listId,link,pdflink,"bi-file-text", pub);
 }
 
-async function addDissFromLink(listId, link, pdflink) {
-  await addPublicationFromLink(listId,link,pdflink,"bi-journals");
+async function addDissFromLink(listId, link, pdflink, pub) {
+  await addPublicationFromLink(listId,link,pdflink,"bi-journals", pub);
 }
 
-async function addPublicationFromLink(listId, link, pdflink, icon) {
+async function addPublicationFromLink(listId, link, pdflink, icon, pub = {}) {
   //async required due to await during bibtex fetch
 
   // get the unordered list element by id
@@ -41,6 +41,7 @@ async function addPublicationFromLink(listId, link, pdflink, icon) {
   //var parser = require('bibtex-parser-js');
   //var parsed = parser.toJSON(bibtex);
   const parsed = BibtexParser.parseToJSON(bibtex);
+  console.log("Parsed BibTeX:", parsed[0]);
   // get the first entry from the parsed object
   var entry = parsed[0];
   // create a string to store the publication details
@@ -168,6 +169,13 @@ async function addPublicationFromLink(listId, link, pdflink, icon) {
 
   // pill badges for keywords
   if (entry.keywords) {
+    if (pub.tags) {
+      const badgeclass = "\"badge ms-2\" style=\"background-color:#fce4ec; color:#880e4f; border:1px solid #f8bbd0;\"";
+      // const badgeclass = "\"badge bg-light text-danger border-danger ms-2\"";  // can change color
+      for (let i = 0; i < pub.tags.length; i++) {
+        text += "<div class=" + badgeclass + ">" + pub.tags[i].trim() + "</div>";
+      }
+    }
     // badge class (ms-x is vertical separation)
     badgeclass = "\"badge border border-secondary text-secondary ms-2\"";
 
@@ -176,6 +184,7 @@ async function addPublicationFromLink(listId, link, pdflink, icon) {
     for (let i = 0; i < keywords.length; i++){
       text += "<div class=" + badgeclass + ">" + keywords[i].trim() + "</div>";
     }
+
   }
 
   // set the inner HTML of the list item to the text
