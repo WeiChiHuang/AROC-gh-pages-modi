@@ -1,0 +1,16 @@
+The first attempt failed before the control assertions with MATLAB:UndefinedFunction
+for out_jacobian_AROCsafetyNetcar. The generated file existed on disk.
+
+Cause: separately invoking each MATLAB script test restores its incoming path.
+CORA's derivatives() returns before addpath() when cached derivatives suffice.
+The generated directory from the preceding LQR case was therefore unavailable.
+
+The runner now adds CORA-remaining/models/auxiliary and its subdirectories to
+the search path and calls rehash before each selected case. A fresh MATLAB
+process retries only this test. No dynamics, constraint, solver tolerance,
+horizon, sample count, iteration budget, test assertion, or containment
+implementation is changed. See the current case status for the retry outcome.
+
+The original failed log and status are retained as attempt-01.log.gz and
+attempt-01-status.json. The full prior manifest and test result remain locally
+in research/remaining-attempts/safety-mpc-before-path-refresh.

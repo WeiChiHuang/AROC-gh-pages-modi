@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_polyContr_car</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_polyContr_car.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates the controller synthesis algorithm using a
+% polynomial control law on the turn right maneuver of a car
+
+% load benchmark parameters
+Param = param_car();
+
+% define algorithm options
+Opts = [];
+
+Opts.N = 5;                 % number of time steps
+Opts.Ninter = 5;            % number of intermediate time steps
+Opts.ctrlOrder = 1;         % polynomial order of the controller
+Opts.Q = diag([1,2,1,1]);   % state weighting matrix
+
+clock = tic;
+[objContr,res] = polynomialControl(&#x27;car&#x27;,Param,Opts);
+tComp = toc(clock);
+
+disp([newline,&#x27;Computation time: &#x27;,num2str(tComp),&#x27;s&#x27;]);
+
+% simulation 
+[resSim,~,~] = simulateRandom(objContr);
+
+% visualization
+figure; hold on; box on
+plotReach(res,[1,2],[.7 .7 .7]);
+plotReachTimePoint(res,[1,2],&#x27;b&#x27;);
+plot(Param.R0,[1,2],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[1,2],&#x27;k&#x27;);
+xlabel(&#x27;v&#x27;); ylabel(&#x27;\phi&#x27;);
+
+figure; hold on; box on
+plotReach(res,[3,4],[.7 .7 .7]);
+plotReachTimePoint(res,[3,4],&#x27;b&#x27;);
+plot(Param.R0,[3,4],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[3,4],&#x27;k&#x27;);
+xlabel(&#x27;x&#x27;); ylabel(&#x27;y&#x27;);</code></pre></body></html>

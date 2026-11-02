@@ -1,0 +1,16 @@
+{
+  "id": "testSafetyNetControl_TestMPCComfortController",
+  "kind": "unit-test",
+  "source": "testSafetyNetControl/TestMPCComfortController",
+  "algorithm": "testSafetyNetControl",
+  "status": "failed",
+  "seconds": 2.6299548,
+  "checks": {
+    "passed": false,
+    "failed": true,
+    "incomplete": true
+  },
+  "figures": [],
+  "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testSafetyNetControl/TestMPCComfortController'\n        Passed: 0\n        Failed: 1\n    Incomplete: 1\n      Duration: 0.8134\n       Details: [1x1 struct]\n\nTotals:\n   0 Passed, 1 Failed, 1 Incomplete.\n   0.81342 seconds testing time.\n\n",
+  "exportNotes": ""
+}

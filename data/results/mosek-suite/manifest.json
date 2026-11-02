@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-19",
+  "matlab": "24.2.0.3212159 (R2024b) Update 9",
+  "seed": 20261019.0,
+  "AROCCommit": "6ba0295754d935b2bf540fab904ebc235a2d7a5c",
+  "CORA": "v2026.0.1",
+  "YALMIP": "R20250626",
+  "CasADi": "3.7.2",
+  "convexSolver": "MOSEK 11.0; upstream solver selections retained",
+  "mosekAvailability": "Renewed license: fresh MATLAB process solved successfully (code 0)",
+  "exampleCount": 6,
+  "unitTestCount": 4,
+  "cases": [
+    {
+      "id": "example_termReg_linSys_doubleIntegrator",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_linSys_doubleIntegrator.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 38.3278737,
+      "checks": {},
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "solverNotes": []
+    },
+    {
+      "id": "example_termReg_nonlinSysOpt_SD_cart",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysOpt_SD_cart.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 60.3225313,
+      "checks": {},
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "example_termReg_nonlinSysLinApproach_DT_cart",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysLinApproach_DT_cart.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 10.1462985,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "solverNotes": []
+    },
+    {
+      "id": "example_termReg_nonlinSysLinApproach_SD_robotArm",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysLinApproach_SD_robotArm.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 132.4820525,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "example_termReg_nonlinSysPolyApproach_SD_cartpole",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysPolyApproach_SD_cartpole.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 55.4647778,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "example_termReg_subpaving_artificialSystem",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_subpaving_artificialSystem.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 78.4271084,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "solverNotes": []
+    },
+    {
+      "id": "testTerminalRegion_TestLinSys",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestLinSys",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 69.0452644,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestLinSys'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 63.8798\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   63.8798 seconds testing time.\n\n",
+      "exportNotes": "",
+      "solverNotes": []
+    },
+    {
+      "id": "testTerminalRegion_TestSubpaving",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestSubpaving",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 76.4998493,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestSubpaving'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 75.9707\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   75.9707 seconds testing time.\n\n",
+      "exportNotes": "",
+      "solverNotes": []
+    },
+    {
+      "id": "testTerminalRegion_TestNonlinSysOpt_Linearization_basedApproach",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 23.4818096,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 22.9988\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   22.9988 seconds testing time.\n\n",
+      "exportNotes": "",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "testTerminalRegion_TestNonlinSysOpt_Polynomialization_basedApproach",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 45.5338593,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 45.0106\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   45.0106 seconds testing time.\n\n",
+      "exportNotes": "",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    }
+  ]
+}

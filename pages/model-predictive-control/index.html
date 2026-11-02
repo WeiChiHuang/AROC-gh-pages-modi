@@ -1,213 +1,104 @@
-<!-- <h2 class="title" style="color:black;">Archive</h2>
-<nav>
-  <ul>
-    <li><a href="https://tumcps.github.io/AROC/data/AROC_2020.zip">AROC Toolbox (.zip | Release 2020)</a></li>
-<li><a href="https://tumcps.github.io/AROC/data/AROC_2020.mltbx">AROC Toolbox (.mltbx | Release 2020)</a></li>
-    <li><a href="https://tumcps.github.io/AROC/data/Aroc2020Manual.pdf" target="_blank">AROC Manual (Release 2020)</a></li>
-  </ul>
-</nav> -->
 
-<!doctype html>
-<html lang="en" data-bs-theme="light">
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Model Predictive Control | AROC - A Tool for Automated Controller Synthesis</title>
-
-    <meta name="author" content="TODO"> <!-- TODO -->
-    <meta name="description" content="TODO"><!-- TODO -->
-    <meta name="keywords" content="AROC, TODO"><!-- TODO -->
-
-    <link rel="icon" type="image/x-icon" href="../../data/images/ArocLogo-icon.png">
-    <!-- Compatibility Mode -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-
-    <!-- Font Newsreader-->
-    <link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet">
-
-    <!-- Bootstrap css-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="../../styles/css.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <!-- Timeline -->
-    <link href="../../styles/timeline.css" rel="stylesheet">
-
-    <!-- MathJax -->
-    <script src="https://cdn.jsdelivr.net/npm/polyfill-library@latest/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Model Predictive Control | AROC</title>
+<meta content="AROC team, Technische Universität München" name="author"/>
+<meta content="AROC toolbox: verified controller synthesis, model predictive control, motion planning, and safe terminal regions." name="description"/>
+<meta content="AROC, controller synthesis, reachability analysis, MATLAB, model predictive control" name="keywords"/>
+<link href="../../data/images/ArocLogo-icon.png" rel="icon" type="image/x-icon"/>
+<!-- Compatibility Mode -->
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<!-- Font Newsreader-->
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet"/>
+<!-- Bootstrap css-->
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet"/>
+<link href="../../styles/css.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+<!-- Timeline -->
+<link href="../../styles/timeline.css" rel="stylesheet"/>
+<!-- MathJax -->
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<link href="../../styles/refresh.css?v=de9fdccf75" rel="stylesheet"/><link href="../../styles/cora-theme.css?v=7ccab896ec" rel="stylesheet"/></head>
 <body>
-<nav class="navbar bg-dark navbar-expand-lg fixed-top" data-bs-theme="dark">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="../../index.html"> <img src="../../data/images/ArocLogo-icon.png"/></a>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item navbar-text">
-                    <div class="d-block d-lg-none">
-                        <hr/>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#model-predictive-control" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Model Predictive Control
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#stirredtankreactor">Stirred Tank Reactor</a></li>
-                    </ul>
-                </li>
-
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#release-notes">Release Notes</a>-->
-                <!--                </li>-->
-                <li class="nav-item navbar-text">
-                    <div class="d-block d-lg-none">
-                        <hr/>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://github.com/TUMcps/Aroc"><i class="bi bi-github"></i> GitHub</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="../../manual/index.html"><i class="bi bi-file-earmark-pdf-fill"></i> Manual</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../pages/publications/index.html"><i class="bi bi-file-text-fill"></i> Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../pages/archive/index.html"><i class="bi bi-archive-fill"></i> Archive</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://de.mathworks.com/matlabcentral/fileexchange/81923-aroc"><i
-                            class="bi bi-box-seam-fill"></i> Matlab</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<nav aria-label="Main navigation" class="navbar bg-dark navbar-expand-xl fixed-top" data-bs-theme="dark"><div class="container-fluid">
+<a aria-label="AROC home" class="navbar-brand" href="../../index.html"><img alt="AROC" decoding="async" height="61" loading="lazy" src="../../data/images/ArocLogo-icon.png" width="63"/></a>
+<button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarToggler" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarToggler"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Features</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../../index.html#motion-primitive-based-control">Motion Primitive Based Control</a></li><li><a class="dropdown-item" href="../../index.html#model-predictive-control">Model Predictive Control</a></li><li><a class="dropdown-item" href="../../index.html#motion-planning">Motion Planning</a></li><li><a class="dropdown-item" href="../../index.html#safe-terminal-regions">Safe Terminal Regions</a></li><li><a class="dropdown-item" href="../../index.html#conformant-synthesis">Conformant Synthesis</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="../../index.html#get-started">Get Started</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#examples">Examples</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#animations">Animations</a></li></ul>
+<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/TUMcps/AROC"><i aria-hidden="true" class="bi bi-github"></i>GitHub</a></li><li class="nav-item"><a class="nav-link" href="../../manual/index.html"><i aria-hidden="true" class="bi bi-file-earmark-text-fill"></i>Manual</a></li><li class="nav-item"><a class="nav-link" href="../../pages/publications/index.html"><i aria-hidden="true" class="bi bi-journal-text"></i>Publications</a></li><li class="nav-item"><a class="nav-link" href="../../pages/archive/index.html"><i aria-hidden="true" class="bi bi-archive-fill"></i>Archive</a></li></ul></div></div></nav>
 <div class="container" id="model-predictive-control">
-    <div class="row space-before">
-        <div class="col-12 col-lg-6 col-xl-6 order-0 order-md-0">
-            <h2><b>Model Predictive Control</b></h2>
-            <p>
+<p class="breadcrumbs"><a href="../../index.html">AROC</a> / <a href="../../index.html#animations">Animations</a> / Model Predictive Control</p><div class="feature-hero">
+<div class="feature-intro">
+<p class="eyebrow">METHOD · RECORDED ANIMATION</p><h1>Model Predictive Control</h1>
+<p>
                 Reachset MPC
                 AROC provides a reachset-based model predictive control (MPC) implementation for nonlinear systems affected by disturbances and measurement errors. The algorithm stabilizes the system over an infinite horizon by driving it into a predefined terminal region using a cost-optimal tracking controller. Reachability analysis ensures satisfaction of input and state constraints during the control computation. The implementation supports tightened input constraints, contraction constraints for finite-time convergence, and integrates with CORA for set-based computations.
             </p>
-
-        </div>
-        <div class="col-12 col-lg-6 col-xl-6 order-0 order-lg-1 text-center">
-            <object id="mpc-svg" type="image/svg+xml" data="../../data/images/latex/figures/MPC/MPC.svg">
-                Your browser does not support SVG
-            </object>
-        </div>
-    </div>
-
-    <!-- Stirred Tank Reactor Section -->
-    <!-- ID for navigation reference -->
-    <hr id="stirredtankreactor"/>
-    <div class="row space-before">
-        <div class="col-12">
-            <!-- Section title -->
-            <h4>Stirred Tank Reactor</h4>
-            <p>The next benchmark is taken from [13, Sec. 5] and considers an exothermic, irreversible reaction<br>
-                A &rarr; B of the reactant A to the product B inside a stirred tank reactor (see Fig. 11).</p>
-
-            <figure>
-                <img src="../../data/images/SirredTankReactor.png" alt="Visualization of the stirred tank reactor benchmark system" style="width:50%;">
-                <figcaption>Figure 11: Visualization of the stirred tank reactor benchmark system.</figcaption>
-            </figure>
-
-            <p>The system dynamics for the stirred tank reactor is as follows [13, Eq. (15)]:</p>
-
-            <p style="text-align: center;">
-                \( \dot{x}_1 = \frac{q}{V}(C_{Af} - (x_1 + C_A^{eq})) - k_0 \cdot e^{-E/(R(x_2 + T^{eq}))} \cdot (x_1 + C_A^{eq}) + w_1 \)<br><br>
+</div>
+<div class="feature-visual" id="animation"><div class="result-animation animation-compact" data-autoplay="true" data-source="../../data/animations/example_reachsetMPC_artificialSystem1.json"><img alt="Recorded MATLAB result: Nonlinear MPC: artificial system" loading="lazy" src="../../data/results/full-suite/example_reachsetMPC_artificialSystem1/figure-01.png"/></div><p class="animation-links"><a href="../../pages/reproduction/index.html#example_reachsetMPC_artificialSystem1">Run record &amp; checks</a><a href="../../data/results/full-suite/example_reachsetMPC_artificialSystem1/source.m">MATLAB source</a><a download="" href="../../data/animations/example_reachsetMPC_artificialSystem1.json">Animation data</a><a download="" href="../../data/animations/example_reachsetMPC_artificialSystem1.svg">Animated SVG</a></p></div>
+</div>
+<!-- Stirred Tank Reactor Section -->
+<!-- ID for navigation reference -->
+<hr id="stirredtankreactor"/>
+<div class="row space-before">
+<div class="col-12">
+<!-- Section title -->
+<h4>Stirred Tank Reactor</h4>
+<p>The next benchmark is taken from the AROC manual, §6.4 and considers an exothermic, irreversible reaction<br/>
+                A → B of the reactant A to the product B inside a stirred tank reactor (see Fig. 11).</p>
+<figure>
+<img alt="Visualization of the stirred tank reactor benchmark system" decoding="async" height="925" loading="lazy" src="../../data/images/SirredTankReactor.png" style="width:50%;" width="1225"/>
+<figcaption>Figure 11: Visualization of the stirred tank reactor benchmark system.</figcaption>
+</figure>
+<p>The system dynamics for the stirred tank reactor is as follows AROC Manual §6.4:</p>
+<p style="text-align: center;">
+                \( \dot{x}_1 = \frac{q}{V}(C_{Af} - (x_1 + C_A^{eq})) - k_0 \cdot e^{-E/(R(x_2 + T^{eq}))} \cdot (x_1 + C_A^{eq}) + w_1 \)<br/><br/>
                 \( \dot{x}_2 = \frac{q}{V}(T_f - (x_2 + T^{eq})) - \frac{\Delta H}{\rho \cdot C_p} k_0 \cdot e^{-E/(R(x_2 + T^{eq}))} \cdot (x_1 + C_A^{eq}) + \frac{UA}{V \cdot \rho \cdot C_p} (u + T_c^{eq} - (x_2 + T^{eq})) + w_2 \)
             </p>
-
-            <p>
+<p>
                 where the system states are the difference of the concentration of reactant A from the equilibrium point \( x_1 = C_A - C_A^{eq} \) and the difference of the reactor temperature from the equilibrium point \( x_2 = T - T^{eq} \), and the system input is the difference of the cooling stream temperature from the equilibrium point \( u = T_c - T_c^{eq} \).
             </p>
-
-            <p>The parameters are defined as:</p>
-
-            <ul>
-                <li>\( C_A^{eq} = 0.5 \ mol/L \)</li>
-                <li>\( T^{eq} = 350 \ K \)</li>
-                <li>\( T_c^{eq} = 300 \ K \)</li>
-                <li>\( q = 5/3 \ l/s \)</li>
-                <li>\( T_f = 350 \ K \)</li>
-                <li>\( V = 100 \ l \)</li>
-                <li>\( \rho = 1000 \ g/l \)</li>
-                <li>\( C_p = 0.239 \ J/g/K \)</li>
-                <li>\( \Delta H = -5 \times 10^4 \ J/mol \)</li>
-                <li>\( E/R = 8750 \ K \)</li>
-                <li>\( k_0 = \frac{7.2}{60} \times 10^{10} \ s^{-1} \)</li>
-                <li>\( UA = \frac{1}{12} \times 10^4 \ J/s/K \)</li>
-            </ul>
-
-            <p>The input constraint is \(u \in [-20, 70] K\) and the set of disturbances is \(w_1 \in [-0.1, 0.1] mol/l/s\) and \(w_2 \in [-2, 2] K/s\).</p>
-
-            <p>Furthermore, we consider the initial set \(x_1(0) \in [-0.17, -0.13] mol/l\) and \(x_2(0) \in [-48, -43] K\).</p>
-
-            <p>The differential equation describing the stirred tank reactor is implemented in the file <code>/benchmarks/dynamics/stirredTankReactor.m</code>, and the parameters for the system are specified in the file <code>/benchmarks/parameter/param_stirredTankReactor.m</code>. The name of the benchmark is <code>'stirredTankReactor'</code>.</p>
-
-        </div>
-        <div class="col-12">
-            <h5>Example</h5>
-            <div class="position-relative">
-                <iframe class="code code-lg"
-                        src="../../data/matlab/scripts/website/modelPredictiveControl/example_reachsetMPC_artificialSystem1.html"></iframe>
-                <div class="position-absolute top-0 end-0 translate-middle-x">
-                    <div class="code-btn-box">
-                        <a class="btn btn-outline-secondary btn-sm"
-                           href="../../data/matlab/scripts/website/modelPredictiveControl/example_reachsetMPC_artificialSystem1.mlx"
-                           title="Download as MATLAB Live Script"><i class="bi bi-download"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    </div>
-
-    <!-- footer -->
-    <div class="row space-before">
-        <hr/>
-        <div class="col-12 col-md-6">Copyright &copy; 2022 - All Rights Reserved - <a href="https://www.tum.de/en/" target="_blank">Technische Universit&auml;t M&uuml;nchen</a></div>
-        <div class="col-12 col-md-6">Website by <a href="https://www6.in.tum.de/people/niklas-kochdumper-msc/" target="_blank">Niklas Kochdumper, YongKuan Zhang, Wei-Chi Huang & <a href="http://www.os-templates.com/" title="Free Website Templates" target="_blank">OS Templates</a><</a></div>
-    </div>
-
+<p>The parameters are defined as:</p>
+<ul>
+<li>\( C_A^{eq} = 0.5 \ mol/L \)</li>
+<li>\( T^{eq} = 350 \ K \)</li>
+<li>\( T_c^{eq} = 300 \ K \)</li>
+<li>\( q = 5/3 \ l/s \)</li>
+<li>\( T_f = 350 \ K \)</li>
+<li>\( V = 100 \ l \)</li>
+<li>\( \rho = 1000 \ g/l \)</li>
+<li>\( C_p = 0.239 \ J/g/K \)</li>
+<li>\( \Delta H = -5 \times 10^4 \ J/mol \)</li>
+<li>\( E/R = 8750 \ K \)</li>
+<li>\( k_0 = \frac{7.2}{60} \times 10^{10} \ s^{-1} \)</li>
+<li>\( UA = \frac{1}{12} \times 10^4 \ J/s/K \)</li>
+</ul>
+<p>The input constraint is \(u \in [-20, 70] K\) and the set of disturbances is \(w_1 \in [-0.1, 0.1] mol/l/s\) and \(w_2 \in [-2, 2] K/s\).</p>
+<p>Furthermore, we consider the initial set \(x_1(0) \in [-0.17, -0.13] mol/l\) and \(x_2(0) \in [-48, -43] K\).</p>
+<p>The differential equation describing the stirred tank reactor is implemented in the file <code>/benchmarks/dynamics/stirredTankReactor.m</code>, and the parameters for the system are specified in the file <code>/benchmarks/parameter/param_stirredTankReactor.m</code>. The name of the benchmark is <code>'stirredTankReactor'</code>.</p>
 </div>
-
+<div class="col-12">
+<h5>Example</h5><p>Additional benchmark source. The animation above links to its own executed example, result data, and checks.</p>
+<details class="source-disclosure"><summary>View MATLAB example code</summary><div class="position-relative">
+<iframe class="code code-lg" loading="lazy" src="../../data/examples/example_reachsetMPC_stirredTankReactor1.html" title="model predictive control example source"></iframe>
+<div class="position-absolute top-0 end-0 translate-middle-x">
+<div class="code-btn-box">
+<a class="btn btn-outline-secondary btn-sm" download="" href="../../data/examples/example_reachsetMPC_stirredTankReactor1.m" title="Download MATLAB source (.m)"><i class="bi bi-download"></i></a>
+</div>
+</div>
+</div></details>
+</div>
+</div>
+</div>
+<!-- footer -->
+<section data-case-id="example_reachsetMPC_artificialSystem1" data-execution-group="licensed-remaining (MOSEK available)" id="full-suite-result"><h2>Reproduction files</h2><details class="static-result"><summary>Static result and vector figure</summary><figure><a href="../../data/results/full-suite/example_reachsetMPC_artificialSystem1/figure-01.svg"><img alt="Reproduced output of example_reachsetMPC_artificialSystem1" loading="lazy" src="../../data/results/full-suite/example_reachsetMPC_artificialSystem1/figure-01.png"/></a><figcaption>Output from example_reachsetMPC_artificialSystem1, with its original benchmark parameters. The listed sampled checks passed.</figcaption></figure></details><p><a href="../reproduction/index.html#example_reachsetMPC_artificialSystem1">Execution record and original test outcomes</a> · <a href="../../data/results/full-suite/example_reachsetMPC_artificialSystem1/source.m">Example source</a> · <a href="../../data/results/full-suite/example_reachsetMPC_artificialSystem1/plot-data.mat">Plot data (.mat)</a></p></section><footer class="site-footer"><p>AROC · Technische Universität München</p><p>Website by Niklas Kochdumper, Yongkuan Zhang, and Wei-Chi Huang. Original template: <a href="https://www.os-templates.com/">OS Templates</a>.</p><a href="https://www.tum.de/en/">Technische Universität München</a></footer>
 <!-- Load Bootstrap at the very end -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-<script>
-    const navLinks = document.querySelectorAll('.nav-item')
-    const menuToggle = document.getElementById('navbarToggler')
-    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false})
-
-    navLinks.forEach((l) => {
-        l.addEventListener('click', () => { bsCollapse.toggle() })
-    })
-
-</script>
-<!--<script>-->
-<!--    setInterval(() => {-->
+<script crossorigin="anonymous" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!--        const obj = document.getElementById("mpc-svg");-->
 <!--        const src = obj.data;-->
 <!--        obj.data = ""; -->
@@ -216,6 +107,5 @@
 <!--        }, 20);-->
 <!--    }, 5500);-->
 <!--</script>-->
-
-</body>
+<script src="../../scripts/site.js"></script><script defer="" src="../../scripts/result-animation.js?v=5ea52d42ac"></script></body>
 </html>

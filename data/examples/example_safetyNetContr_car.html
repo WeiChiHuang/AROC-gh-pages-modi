@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_safetyNetContr_car</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_safetyNetContr_car.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates the performance of the Safety Net Controller on
+% the example of a turn-right maneuver of the car benchmark
+
+% load benchmark parameter
+Param = param_car();
+
+
+%% LQR COMFORT CONTROLLER
+
+% define algorithm options
+Opts = [];
+
+Opts.reachSteps = 5;            % number of reachability steps
+Opts.tComp = 0.05;              % allocated computation time 
+Opts.refTraj.Q = 10*eye(4);     % state weighting matrix (reference traj.)        
+Opts.refTraj.R = 1/10*eye(2);   % input weighting matrix (reference traj.)
+    
+% settings for the comfort controller that is applied online
+Opts.controller = {&#x27;LQR&#x27;,&#x27;LQR&#x27;};
+
+Q = diag([0.2 10 31.2 1]);
+contrOpts1.R = diag([50,170]); contrOpts1.Q = Q;
+contrOpts2.R = diag([60,200]); contrOpts2.Q = Q;
+
+Opts.contrOpts = {contrOpts1,contrOpts2};
+
+% controller synthesis
+[objContr,res] = safetyNetControl(&#x27;car&#x27;,Param,Opts);
+
+% simulation
+[resSim,~,~] = simulateRandom(objContr);
+
+% visualization
+figure; hold on; box on;
+plotReach(res,[1,2],[.7 .7 .7]);
+plotReachTimePoint(res,[1,2],&#x27;b&#x27;);
+plotSimulation(resSim,[1,2],&#x27;k&#x27;);
+xlabel(&#x27;v&#x27;); ylabel(&#x27;\phi&#x27;);
+title(&#x27;LQR comfort controller&#x27;);
+
+figure; hold on; box on
+plotReach(res,[3,4],[.7 .7 .7]);
+plotReachTimePoint(res,[3,4],&#x27;b&#x27;);
+plotSimulation(resSim,[3,4],&#x27;k&#x27;);
+xlabel(&#x27;x&#x27;); ylabel(&#x27;y&#x27;);
+title(&#x27;LQR comfort controller&#x27;);
+
+
+%% MPC COMFORT CONTROLLER
+
+% settings for the comfort controller that is applied online
+Opts.controller = &#x27;MPC&#x27;;
+contrOpts.Q = diag([12 10 60 35]);
+contrOpts.R = diag([0.1 1]);
+contrOpts.horizon = 3;
+contrOpts.Ninter = 2;
+Opts.contrOpts = contrOpts;
+
+% controller synthesis
+[objContr,res] = safetyNetControl(&#x27;car&#x27;,Param,Opts);
+
+% simulation
+[resSim,~,~] = simulateRandom(objContr);
+
+% visualization
+figure; hold on; box on;
+plotReach(res,[1,2],[.7 .7 .7]);
+plotReachTimePoint(res,[1,2],&#x27;b&#x27;);
+plotSimulation(resSim,[1,2],&#x27;k&#x27;);
+xlabel(&#x27;v&#x27;); ylabel(&#x27;\phi&#x27;);
+title(&#x27;MPC comfort controller&#x27;);
+
+figure; hold on; box on;
+plotReach(res,[3,4],[.7 .7 .7]);
+plotReachTimePoint(res,[3,4],&#x27;b&#x27;);
+plotSimulation(resSim,[3,4],&#x27;k&#x27;);
+xlabel(&#x27;x&#x27;); ylabel(&#x27;y&#x27;);
+title(&#x27;MPC comfort controller&#x27;);</code></pre></body></html>

@@ -1,281 +1,84 @@
-<!doctype html>
-<html lang="en" data-bs-theme="light">
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Publication | AROC - A Tool for Automated Controller Synthesis</title>
-
-	<meta name="author" content="TODO"> <!-- TODO -->
-	<meta name="description" content="TODO"><!-- TODO -->
-	<meta name="keywords" content="AROC, TODO"><!-- TODO -->
-
-	<link rel="icon" type="image/x-icon" href="../../data/images/ArocLogo-icon.png">
-	<!-- Compatibility Mode -->
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-	
-	<!-- Font Newsreader--> 
-	<link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet">
-
-	<!-- Bootstrap css--> 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-	<link href="../../styles/css.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-	<!-- Timeline -->
-	<link href="../../styles/timeline.css" rel="stylesheet">
-
-	<!-- Publication list -->
-	<script src="https://cdn.jsdelivr.net/npm/bibtex-js-parser/umd/bibtex-js-parser.js"></script>
-	<script src="../../scripts/addPublication.js"></script>
-
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Publications | AROC</title>
+<meta content="AROC team, Technische Universität München" name="author"/>
+<meta content="AROC toolbox: verified controller synthesis, model predictive control, motion planning, and safe terminal regions." name="description"/>
+<meta content="AROC, controller synthesis, reachability analysis, MATLAB, model predictive control" name="keywords"/>
+<link href="../../data/images/ArocLogo-icon.png" rel="icon" type="image/x-icon"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet"/>
+<link href="../../styles/css.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../../styles/timeline.css" rel="stylesheet"/>
+<link href="../../styles/refresh.css" rel="stylesheet"/><link href="../../styles/cora-theme.css?v=7ccab896ec" rel="stylesheet"/></head>
 <body>
-<nav class="navbar bg-dark navbar-expand-lg fixed-top" data-bs-theme="dark">
-	<div class="container-fluid">
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-				aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<a class="navbar-brand" href="../../index.html"> <img src="../../data/images/ArocLogo-icon.png"/></a>
-		<div class="collapse navbar-collapse" id="navbarToggler">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item navbar-text">
-					<div class="d-block d-lg-none">
-						<hr/>
-					</div>
-				</li>
-<!--				<li class="nav-item">-->
-<!--                    <a class="nav-link" href="#workshop">Workshop Papers</a>-->
-<!--                </li>-->
-<!--				<li class="nav-item">-->
-<!--                    <a class="nav-link" href="#AROCpubs">AROC Publications</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#usingAROC">Publications using AROC</a>-->
-<!--                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" href="#usingAROC">Tool Papers</a>
-                </li>
-				<li class="nav-item navbar-text">
-					<div class="d-block d-lg-none">
-						<hr/>
-					</div>
-				</li>
-			</ul>
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://github.com/TUMcps/Aroc"><i class="bi bi-github"></i> GitHub</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="../../manual/index.html"><i class="bi bi-file-earmark-pdf-fill"></i> Manual</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="../../pages/publications/index.html"><i class="bi bi-file-text-fill"></i> Publications</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="../../pages/archive/index.html"><i class="bi bi-archive-fill"></i> Archive</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://de.mathworks.com/matlabcentral/fileexchange/81923-aroc"><i
-							class="bi bi-box-seam-fill"></i> Matlab</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
-
+<nav aria-label="Main navigation" class="navbar bg-dark navbar-expand-xl fixed-top" data-bs-theme="dark"><div class="container-fluid">
+<a aria-label="AROC home" class="navbar-brand" href="../../index.html"><img alt="AROC" decoding="async" height="61" loading="lazy" src="../../data/images/ArocLogo-icon.png" width="63"/></a>
+<button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarToggler" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarToggler"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Features</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../../index.html#motion-primitive-based-control">Motion Primitive Based Control</a></li><li><a class="dropdown-item" href="../../index.html#model-predictive-control">Model Predictive Control</a></li><li><a class="dropdown-item" href="../../index.html#motion-planning">Motion Planning</a></li><li><a class="dropdown-item" href="../../index.html#safe-terminal-regions">Safe Terminal Regions</a></li><li><a class="dropdown-item" href="../../index.html#conformant-synthesis">Conformant Synthesis</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="../../index.html#get-started">Get Started</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#examples">Examples</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#animations">Animations</a></li></ul>
+<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/TUMcps/AROC"><i aria-hidden="true" class="bi bi-github"></i>GitHub</a></li><li class="nav-item"><a class="nav-link" href="../../manual/index.html"><i aria-hidden="true" class="bi bi-file-earmark-text-fill"></i>Manual</a></li><li class="nav-item"><a class="nav-link" href="../../pages/publications/index.html"><i aria-hidden="true" class="bi bi-journal-text"></i>Publications</a></li><li class="nav-item"><a class="nav-link" href="../../pages/archive/index.html"><i aria-hidden="true" class="bi bi-archive-fill"></i>Archive</a></li></ul></div></div></nav>
 <div class="container">
-	<div class="row space-before">
-        <div class="col-12 col-lg-6 col-xl-8 order-1 order-lg-0">
-            <h2>Publications</h2>
-            <p>Overview of the publications of AROC.</p>
-        </div>
-        <div class="col-12 col-lg-6 col-xl-4 order-0 order-lg-1 text-center">
-            <div class="row">
-                <div class="col-3 col-sm-3 col-lg-2"></div>
-                <div class="col-6 col-sm-6 col-lg-8">
-                    <object type="image/svg+xml" data="../../data/images/ArocLogo.svg">
+<div class="row space-before">
+<div class="col-12 col-lg-6 col-xl-8 order-1 order-lg-0">
+<h1>Publications</h1>
+<p>Overview of the publications of AROC.</p>
+</div>
+<div class="col-12 col-lg-6 col-xl-4 order-0 order-lg-1 text-center">
+<div class="row">
+<div class="col-3 col-sm-3 col-lg-2"></div>
+<div class="col-6 col-sm-6 col-lg-8">
+<object aria-label="ArocLogo" data="../../data/images/ArocLogo.svg" type="image/svg+xml">
                         Your browser does not support SVG
                     </object>
-                </div>
-            </div>
-        </div>
-		<div class="col-12 order-2">
-            <p>To cite AROC, please use the following reference:</p>
-            <div class="card position-relative" style="font-weight: normal; background-color: #F5F5F5">
-                <!-- the code lines below need the same indentation as one the displayed page! -->
-                <!-- also, if <code> is moved to a newline, there is another blank line in the code segment -->
-                <pre style="margin: 0"><code> @inproceedings{kochdumper2021aroc,
+</div>
+</div>
+</div>
+<div class="col-12 order-2">
+<p>To cite AROC, please use the following reference:</p>
+<div class="card position-relative" style="font-weight: normal; background-color: #F5F5F5">
+<pre style="margin: 0"><code> @inproceedings{kochdumper2021aroc,
 	title			={AROC: A toolbox for automated reachset optimal controller synthesis},
 	author			={Kochdumper, Niklas and Gruber, Felix and Sch{\"u}rmann, Bastian and Ga{\ss}mann, Victor and Klischat, Moritz and Althoff, Matthias},
 	booktitle		={Proceedings of the 24th International Conference on Hybrid Systems: Computation and Control},
 	pages			={1--6},
 	year			={2021}
 }</code></pre>
-                <div class="position-absolute top-0 end-0 translate-middle-x">
-                    <div class="code-btn-box">
-                        <a class="btn btn-outline-secondary btn-sm"
-
-						   href="https://mediatum.ub.tum.de/export/1615633/bibtex"
-                           title="Download bibtex"><i class="bi bi-download"></i></a>
-						<!--  href="../../data/bib/using/bsp.bib" -->
-					</div>
-                </div>
-            </div>
-        </div>
-	</div>
-    <!-- Publication List-->
-	<ul class="list-group list-group-flush">
-        <li id="workshop" class="list-group-item px-0"> <!-- id used for navigation bar reference -->
-            <a class="btn" data-bs-toggle="collapse" href="#collapse_workshop" role="button"
-               aria-expanded="true"
-               aria-controls="collapse_workshop"> <!-- href and controls -->
-                <!-- Controls the collapsible section -->
-                <div class="row">
-                    <div class="col-11"><h4>Workshop Papers</h4></div> <!-- Section Title -->
-                    <div class="col-1"><span class="mr-3"></span></div> <!-- Placeholder for spacing -->
-                </div>
-            </a>
-            <!-- Collapsible content container -->
-            <div class="collapse show" id="collapse_workshop">
-                <div class="row">
-                    <div class="col-12">
-                        <p>
-							Only the tool paper. <!-- Description of the workshop -->
-                        </p>
-                        <div class="space-before-sm"></div>
-                        <!-- List container for dynamically added workshop papers -->
-                        <ul class="timeline-with-icons" id="workshop_papers"> </ul>
-
-                        <script>
-                            // Define an array of publications with metadata
-                            pubs = [
-								{bibtex: "Optimization_based_control.bib", type: 'conference', pdf: "https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017b.pdf", tags: ["motion primitive based control", "2017"]},
-								{bibtex: "convex_interpolation_control.bib", type: 'conference', pdf: "https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017a.pdf", tags: ["motion primitive based control", "2017"]},
-								{bibtex: "generator space control.bib", type: 'article', pdf: "https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017c.pdf", tags: ["motion primitive based control", "2017"]},
-                                {bibtex: "subpaving.bib", type: 'conference', pdf: "https://mediatum.ub.tum.de/doc/1379654/742323.pdf", tags: ["Model Predictive Control","terminal region", "2017"]},
-                                {bibtex: "reachset model predictive control.bib", type: 'conference', pdf: "https://mediatum.ub.tum.de/doc/1454141/document.pdf", tags: ["Model Predictive Control", "2018"]},
-                                {bibtex: "Model predictive control for lienar systems.bib", type: 'conference', pdf: "https://mediatum.ub.tum.de/doc/1524264/205786.pdf", tags: ["Model Predictive Control", "2019"]},
-								{bibtex: "polynomial control.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1624904/lhz63wbwypwbp48kl8byhejv0.root.pdf", tags: ["motion primitive based control", "2021"]},
-                                {bibtex: "combined control.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1636785/7bpxajkm94ekacq2mpxrg3go1.Schuermann-2021-TAC.pdf", tags: ["motion primitive based control", "2021"]},
-                                {bibtex: "zonoLinSys.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1553232/document.pdf", tags: ["Model Predictive Control","terminal region", "2021"]},
-                                {bibtex: "safety net control.bib", type: 'article', pdf: "https://mediatum.ub.tum.de/doc/1633295/zv9aj1o9xifu0qblavor0q08s.Schuermann-2022-TAC.pdf", tags: ["motion primitive based control", "2022"]},
-                            ];
-                            // Function call to dynamically populate the workshop paper list
-                            addPublicationsFromLink('workshop_papers', 'workshop', pubs);
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li id="AROCpubs" class="list-group-item px-0">
-            <a class="btn" data-bs-toggle="collapse" href="#collapse_AROCpubs" role="button"
-               aria-expanded="true"
-               aria-controls="collapse_AROCpubs">
-                <div class="row">
-                    <div class="col-11"><h4>AROC Publications</h4></div>
-                    <div class="col-1"><span class="mr-3"></span></div>
-                </div>
-            </a>
-            <div class="collapse show" id="collapse_AROCpubs">
-                <div class="row">
-                    <div class="col-12">
-                        <p>
-                            The novelties in the papers below are implemented in AROC.
-                        </p>
-                        <div class="space-before-sm"></div>
-
-                        <ul class="timeline-with-icons" id="AROCpubs_papers"> </ul>
-
-                        <script>
-                            pubs = [
-								{bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
-								{bibtex: "bsp2.bib", type: 'paper'},
-								{bibtex: "bsp3.bib", type: 'paper'},
-                              ];
-                            addPublicationsFromLink('AROCpubs_papers', 'features', pubs);
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li id="usingAROC" class="list-group-item px-0">
-            <a class="btn" data-bs-toggle="collapse" href="#collapse_usingAROC" role="button"
-               aria-expanded="true"
-               aria-controls="collapse_usingAROC">
-                <div class="row">
-                    <div class="col-11"><h4>Publications using AROC</h4></div>
-                    <div class="col-1"><span class="mr-3"></span></div>
-                </div>
-            </a>
-            <div class="collapse show" id="collapse_usingAROC">
-                <div class="row">
-                    <div class="col-12">
-                        <p> Using Aroc </p>
-                        <p> <a href="../../index.html#contact">Let us know</a> if any of your publications is missing! </p>
-
-                        <div class="space-before-sm"></div>
-
-                        <ul class="timeline-with-icons" id="usingAROC_papers"> </ul>
-
-                        <script>
-                            pubs = [
-								{bibtex: "bsp.bib", type: 'paper', pdf: "https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf"},
-								{bibtex: "bsp2.bib", type: 'paper'},
-								{bibtex: "bsp3.bib", type: 'paper'},
-                               ];
-                            addPublicationsFromLink('usingAROC_papers', 'using', pubs);
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="list-group-item px-0"></li> <!-- empty last item to have line underneath previous item -->
-    </ul>
-
-	  <!-- footer -->
-	  <div class="row space-before">
-		<hr/>
-		<div class="col-12 col-md-6">Copyright &copy; 2022 - All Rights Reserved - <a href="https://www.tum.de/en/" target="_blank">Technische Universit&auml;t M&uuml;nchen</a></div>
-	  <div class="col-12 col-md-6">Website by <a href="https://www6.in.tum.de/people/niklas-kochdumper-msc/" target="_blank">Niklas Kochdumper, YongKuan Zhang, Wei-Chi Huang & <a href="http://www.os-templates.com/" title="Free Website Templates" target="_blank">OS Templates</a></a></div>
-	  </div>
-
+<div class="position-absolute top-0 end-0 translate-middle-x">
+<div class="code-btn-box">
+<a class="btn btn-outline-secondary btn-sm" href="https://mediatum.ub.tum.de/export/1615633/bibtex" title="Download bibtex"><i class="bi bi-download"></i></a>
 </div>
-
-  <!-- Load Bootstrap at the very end -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-	crossorigin="anonymous"></script>
-<script>
-	const navLinks = document.querySelectorAll('.nav-item')
-	const menuToggle = document.getElementById('navbarToggler')
-	const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false})
-
-	navLinks.forEach((l) => {
-	l.addEventListener('click', () => { bsCollapse.toggle() })
-	})
-
-</script>
-<!-- <section id="latest" class="last">
-	<p style="color:white;">PLACEHOLDER</p>
-	<h1 style="color:black;">Publications</h1>
-	<p style="color:white;"></p>
- 	<table style="width:100%">
-	  <tr valign="top">
-	    <td align="middle" style="color:black;" width="5%">
-		[<a name="Schürmann2017a" style="color:black;">1</a>]
-	    </td>
-	    <td style="color:black;">
-	     	N.&nbsp;Kochdumper, F.&nbsp;Gruber, B.&nbsp;Schürmann, V.&nbsp;Gaßmann, M.&nbsp;Klischat, and M.&nbsp;Althoff.
- 		AROC: A Toolbox for Automated Reachset Optimal Controller Synthesis
- 		In <em>Proc. of the International Conference on Hybrid Systems: Computation and Control</em>, 2021.
-		[&nbsp;<a href="https://mediatum.ub.tum.de/export/1615633/bibtex" style="color:DodgerBlue;" target="_blank">.bib</a>&nbsp;| 
-		<a href="https://mediatum.ub.tum.de/doc/1615633/m6mc7276fyqq0wdaxs1isocwo.ArocToolPaper.pdf" style="color:DodgerBlue;" target="_blank">.pdf</a>&nbsp;]
-	    </td>
-	  </tr>
-	</table>
-      </section>. -->
-</body>
+</div>
+</div>
+</div>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item px-0" id="workshop">
+<a aria-controls="collapse_workshop" aria-expanded="true" class="btn" data-bs-toggle="collapse" href="#collapse_workshop" role="button">
+<div class="row">
+<div class="col-11"><h4>Algorithm Publications</h4></div>
+<div class="col-1"><span class="mr-3"></span></div>
+</div>
+</a>
+<div class="collapse show" id="collapse_workshop">
+<div class="row">
+<div class="col-12">
+<p>Publications describing algorithms implemented in AROC.</p>
+<div class="space-before-sm"></div>
+<ol class="publication-list" id="workshop_papers"><li><h3>Optimal control of sets of solutions to formally guarantee constraints of disturbed linear systems</h3><p>Bastian Schuermann, Matthias Althoff. <em>2017 American Control Conference (ACC)</em>, 2017.</p><p><a href="../../data/bib/workshop/Optimization_based_control.bib">BibTeX</a> · <a href="https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017b.pdf">PDF</a> · <a href="https://doi.org/10.23919/ACC.2017.7963332">Publisher / DOI</a></p></li><li><h3>Convex Interpolation Control with Formal Guarantees for Disturbed and Constrained Nonlinear Systems</h3><p>Bastian Schürmann, Matthias Althoff. <em>Proceedings of the 20th International Conference on Hybrid Systems: Computation and Control</em>, 2017.</p><p><a href="../../data/bib/workshop/convex_interpolation_control.bib">BibTeX</a> · <a href="https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017a.pdf">PDF</a> · <a href="https://doi.org/10.1145/3049797.3049800">Publisher / DOI</a></p></li><li><h3>Guaranteeing Constraints of Disturbed Nonlinear Systems Using Set-Based Optimal Control in Generator Space</h3><p>Bastian Schürmann, Matthias Althoff. <em>IFAC-PapersOnLine</em>, 2017.</p><p><a href="../../data/bib/workshop/generator%20space%20control.bib">BibTeX</a> · <a href="https://archivedsite.air.in.tum.de/Main/Publications/Schuermann2017c.pdf">PDF</a> · <a href="https://doi.org/10.1016/j.ifacol.2017.08.1617">Publisher / DOI</a></p></li><li><h3>Estimating the region of attraction via forward reachable sets</h3><p>Ahmed El-Guindy, Dongkun Han, Matthias Althoff. <em>2017 American Control Conference (ACC)</em>, 2017.</p><p><a href="../../data/bib/workshop/subpaving.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1379654/742323.pdf">PDF</a> · <a href="https://doi.org/10.23919/ACC.2017.7963126">Publisher / DOI</a></p></li><li><h3>Reachset Model Predictive Control for Disturbed Nonlinear Systems</h3><p>Bastian Schürmann, Niklas Kochdumper, Matthias Althoff. <em>2018 IEEE Conference on Decision and Control (CDC)</em>, 2018.</p><p><a href="../../data/bib/workshop/reachset%20model%20predictive%20control.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1454141/document.pdf">PDF</a> · <a href="https://doi.org/10.1109/CDC.2018.8619781">Publisher / DOI</a></p></li><li><h3>Scalable Robust Model Predictive Control for Linear Sampled-Data Systems</h3><p>Felix Gruber, Matthias Althoff. <em>2019 IEEE 58th Conference on Decision and Control (CDC)</em>, 2019.</p><p><a href="../../data/bib/workshop/Model%20predictive%20control%20for%20lienar%20systems.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1524264/205786.pdf">PDF</a> · <a href="https://doi.org/10.1109/CDC40024.2019.9029873">Publisher / DOI</a></p></li><li><h3>Verified Polynomial Controller Synthesis for Disturbed Nonlinear Systems</h3><p>Victor Gaßmann, Matthias Althoff. <em>IFAC-PapersOnLine</em>, 2021.</p><p><a href="../../data/bib/workshop/polynomial%20control.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1624904/lhz63wbwypwbp48kl8byhejv0.root.pdf">PDF</a> · <a href="https://doi.org/10.1016/j.ifacol.2021.08.479">Publisher / DOI</a></p></li><li><h3>Optimizing Sets of Solutions for Controlling Constrained Nonlinear Systems</h3><p>Bastian Schürmann, Matthias Althoff. <em>IEEE Transactions on Automatic Control</em>, 2021.</p><p><a href="../../data/bib/workshop/combined%20control.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1636785/7bpxajkm94ekacq2mpxrg3go1.Schuermann-2021-TAC.pdf">PDF</a> · <a href="https://doi.org/10.1109/TAC.2020.2989762">Publisher / DOI</a></p></li><li><h3>Computing Safe Sets of Linear Sampled-Data Systems</h3><p>Felix Gruber, Matthias Althoff. <em>IEEE Control Systems Letters</em>, 2021.</p><p><a href="../../data/bib/workshop/zonoLinSys.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1553232/document.pdf">PDF</a> · <a href="https://doi.org/10.1109/LCSYS.2020.3002476">Publisher / DOI</a></p></li><li><h3>Formal Safety Net Control Using Backward Reachability Analysis</h3><p>Bastian Schürmann, Moritz Klischat, Niklas Kochdumper, Matthias Althoff. <em>IEEE Transactions on Automatic Control</em>, 2022.</p><p><a href="../../data/bib/workshop/safety%20net%20control.bib">BibTeX</a> · <a href="https://mediatum.ub.tum.de/doc/1633295/zv9aj1o9xifu0qblavor0q08s.Schuermann-2022-TAC.pdf">PDF</a> · <a href="https://doi.org/10.1109/TAC.2021.3124188">Publisher / DOI</a></p></li></ol>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-0"></li>
+</ul>
+<footer class="site-footer"><p>AROC · Technische Universität München</p><p>Website by Niklas Kochdumper, Yongkuan Zhang, and Wei-Chi Huang. Original template: <a href="https://www.os-templates.com/">OS Templates</a>.</p><a href="https://www.tum.de/en/">Technische Universität München</a></footer>
+</div>
+<script crossorigin="anonymous" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../scripts/site.js"></script></body>
 </html>

@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_convInterContr_robotArm</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_convInterContr_robotArm.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates the differences between the scaled linear
+% control law and the linear control law determined by solving an
+% optimization problem on the robot arm benchmark.
+
+% load benchmark parameter
+Param = param_robotArm();
+
+
+%% SCALED LINEAR CONTROL LAW
+
+% define algorithm options
+Opts = [];
+
+Opts.controller = &#x27;linear&#x27;;                 % controller 
+Opts.approx.method = &#x27;scaled&#x27;;              % method to approx. contr. law
+Opts.Q = diag([10,10,1,1]);                 % state weighting matrix
+Opts.R = diag([0;0]);                       % input weighting matrix 
+Opts.refTraj.Q = eye(4)./(0.05^2);          % state weighting (ref. traj.)
+Opts.refTraj.R = diag([1;1]./([3;1].^2));   % input weighting (ref. traj.)
+
+% controler synthesis
+clock = tic;
+[objContrScaled,resContrScaled] = ...
+    convexInterpolationControl(&#x27;robotArm&#x27;,Param,Opts);
+tComp = toc(clock);
+
+disp([newline,&#x27;Computation time (scaled linear controller): &#x27;, ...
+      num2str(tComp),&#x27;s&#x27;, newline]);
+
+% simulation 
+[resSim,~,~] = simulateRandom(objContrScaled);
+
+% visualization
+figure; hold on; box on
+plotReach(resContrScaled,[1,3],[.7 .7 .7]);
+plotReachTimePoint(resContrScaled,[1,3],&#x27;b&#x27;);
+plot(Param.R0,[1,3],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[1,3],&#x27;k&#x27;);
+xlabel(&#x27;$\theta_1$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+ylabel(&#x27;$\dot\theta_1$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+title(&#x27;Scaled Linear Control Law&#x27;);
+
+figure; hold on; box on
+plotReach(resContrScaled,[2,4],[.7 .7 .7]);
+plotReachTimePoint(resContrScaled,[2,4],&#x27;b&#x27;);
+plot(Param.R0,[2,4],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[2,4],&#x27;k&#x27;);
+xlabel(&#x27;$\theta_2$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+ylabel(&#x27;$\dot\theta_2$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+title(&#x27;Scaled Linear Control Law&#x27;);
+
+
+
+%% OPTIMIZED LINEAR CONTROL LAW
+
+% adapt algorithm options
+Opts.controller = &#x27;linear&#x27;;             % controller
+Opts.approx.method = &#x27;optimized&#x27;;       % method to approx. contr. law
+Opts.approx.lambda = 0.5;               % tradeoff for approx. contr. law
+
+% controller synthesis
+clock = tic;
+[objContrOptimized,resContrOptimized] = ...
+    convexInterpolationControl(&#x27;robotArm&#x27;,Param,Opts);
+tComp = toc(clock);
+
+disp([newline,&#x27;Computation time (optimized linear controller): &#x27;, ...
+      num2str(tComp),&#x27;s&#x27;]);
+
+% simulation 
+[resSim,~,~] = simulateRandom(objContrOptimized);
+
+% visualization
+figure; hold on; box on
+plotReach(resContrOptimized,[1,3],[.7 .7 .7]);
+plotReachTimePoint(resContrOptimized,[1,3],&#x27;r&#x27;);
+plot(Param.R0,[1,3],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[1,3],&#x27;k&#x27;);
+xlabel(&#x27;$\theta_1$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+ylabel(&#x27;$\dot\theta_1$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+title(&#x27;Optimized Linear Control Law&#x27;);
+
+figure; hold on; box on
+plotReach(resContrOptimized,[2,4],[.7 .7 .7]);
+plotReachTimePoint(resContrOptimized,[2,4],&#x27;r&#x27;);
+plot(Param.R0,[2,4],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[2,4],&#x27;k&#x27;);
+xlabel(&#x27;$\theta_2$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+ylabel(&#x27;$\dot\theta_2$&#x27;,&#x27;interpreter&#x27;,&#x27;latex&#x27;);
+title(&#x27;Optimized Linear Control Law&#x27;);
+</code></pre></body></html>

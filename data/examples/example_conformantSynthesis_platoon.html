@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_conformantSynthesis_platoon</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_conformantSynthesis_platoon.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates conformance checking using measurements from a
+% platoon and compared different set representations for the model
+% uncertainties
+
+benchmark = &#x27;platoon4&#x27;;
+
+% load measurements from the car
+load(&#x27;measurements_platoon&#x27;);
+
+% algorithm settings
+Opts = [];
+Opts.group = 6;         % number of measurement grouped together
+Opts.measErr = true;    % use measurement errors to represent uncertainty
+Opts.mu = 0.1;          % trade-off measurement error and process noise 
+
+% conformance checking (interval)
+clock = tic;
+Opts.set = &#x27;interval&#x27;;
+[Wint,Vint] = conformantSynthesis(benchmark,M,Opts);
+tComp = toc(clock);
+
+disp([&#x27;Computation time (interval): &#x27;,num2str(tComp)]);
+
+% conformance checking (zonotope)
+clock = tic;
+Opts.set = &#x27;zonotope&#x27;;
+Wzono = conformantSynthesis(benchmark,M,Opts);
+tComp = toc(clock);
+
+disp([&#x27;Computation time (zonotope): &#x27;,num2str(tComp)]);
+
+% visualization
+figure; hold on; box on;
+h1 = plot(Wint,[1,2],&#x27;b&#x27;);
+h2 = plot(Wzono,[1,2],&#x27;r&#x27;);
+legend([h1,h2],&#x27;interval&#x27;,&#x27;zonotope&#x27;);
+xlabel(&#x27;w_1&#x27;); ylabel(&#x27;w_2&#x27;);
+
+figure; hold on; box on;
+R = reachSetConformance(benchmark,M{1},Wint,Vint);
+plot(R,[1,2],&#x27;FaceColor&#x27;,[.6 .6 .6],&#x27;EdgeColor&#x27;,&#x27;none&#x27;);
+plot(M{1}.x(1,:),M{1}.x(2,:),&#x27;k&#x27;);
+xlabel(&#x27;p_1&#x27;); ylabel(&#x27;p_2&#x27;);</code></pre></body></html>

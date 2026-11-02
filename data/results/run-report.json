@@ -1,0 +1,21 @@
+{
+  "matlab": "24.2.0.3212159 (R2024b) Update 9",
+  "seed": 2.0261019E+7,
+  "terminalSolver": "SeDuMi 1.3",
+  "mpcSolver": "MATLAB linprog",
+  "realTime": false,
+  "mpcSeconds": 27.5086078,
+  "mpcInputsPass": true,
+  "mpcTerminalPass": true,
+  "mpcStatus": "passed",
+  "terminalSeconds": 11.3345499,
+  "terminalTrajectories": 10,
+  "terminalChecksPass": true,
+  "terminalStatus": "passed",
+  "conformanceSeconds": 3.4829691,
+  "conformanceCheckedPoints": 101,
+  "conformanceContainedPoints": 101,
+  "conformanceTrajectoriesUsed": 3,
+  "conformanceStatus": "passed-on-supplied-trajectory",
+  "conformanceProjectedContainedPoints": 101
+}

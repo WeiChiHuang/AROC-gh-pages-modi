@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_linSysMPC_doubleIntegrator</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_linSysMPC_doubleIntegrator.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates linear model predictive control for the
+% double integrator benchmark
+
+% load system parameter
+ParamTerm = param_doubleIntegrator();
+ParamTerm = rmfield(ParamTerm,&#x27;R0&#x27;);
+
+Param = ParamTerm;
+Param.xf = zeros(2,1);
+Param.x0 = [3;-3];
+
+% compute terminal region
+OptsTerm = [];
+OptsTerm.Tdomain = interval(-ones(2,1),ones(2,1));
+OptsTerm.timeStep = 0.1;
+OptsTerm.N = 30;
+OptsTerm.Q = eye(2);
+OptsTerm.R = eye(1);
+OptsTerm.terminalRegionType = &#x27;fixed&#x27;;
+OptsTerm.terminalRegionSet = &#x27;zonotope&#x27;;
+OptsTerm.genMethod = &#x27;spherical&#x27;;
+OptsTerm.nGenerators = 10;
+
+T = computeTerminalRegion(&#x27;doubleIntegrator&#x27;,&#x27;linSys&#x27;, ...
+                                                    ParamTerm,OptsTerm);
+
+% controller settings
+Opts = [];
+Opts.termReg = T;           % terminal region 
+Opts.tOpt = 8;              % prediction horizon
+Opts.N = 40;                % number of time steps
+Opts.realTime = true;       % require that computations run in real time
+
+% model predictive control
+res = linSysMPC(&#x27;doubleIntegrator&#x27;,Param,Opts);
+
+% visualization
+figure; hold on; box on
+plot(Opts.termReg.set,[1,2],&#x27;FaceColor&#x27;,[100 182 100]./255,...
+     &#x27;EdgeColor&#x27;,&#x27;none&#x27;,&#x27;FaceAlpha&#x27;,0.8);
+plotReach(res,[1,2],[.7 .7 .7]);
+plotReachTimePoint(res,[1,2],&#x27;b&#x27;);
+plotSimulation(res,[1,2],&#x27;r&#x27;);
+xlabel(&#x27;x_1&#x27;); ylabel(&#x27;x_2&#x27;);</code></pre></body></html>

@@ -1,6 +1,7 @@
 
 // Get the elements by class name
 var flyin = document.querySelectorAll(".flyin");
+flyin.forEach(element => element.classList.add('visible'));
 
 // Create a new intersection observer
 var observer = new IntersectionObserver(function(entries) {

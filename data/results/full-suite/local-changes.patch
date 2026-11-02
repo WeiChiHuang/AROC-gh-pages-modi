@@ -1,0 +1,37 @@
+diff --git a/examples/conformantSynthesis/example_conformantSynthesis_platoon.m b/examples/conformantSynthesis/example_conformantSynthesis_platoon.m
+index 2b57fd3..53dfeab 100644
+--- a/examples/conformantSynthesis/example_conformantSynthesis_platoon.m
++++ b/examples/conformantSynthesis/example_conformantSynthesis_platoon.m
+@@ -40,4 +40,4 @@ figure; hold on; box on;
+ R = reachSetConformance(benchmark,M{1},Wint,Vint);
+ plot(R,[1,2],'FaceColor',[.6 .6 .6],'EdgeColor','none');
+ plot(M{1}.x(1,:),M{1}.x(2,:),'k');
+-xlabel('p_1'); ylabel('p_2');
+\ No newline at end of file
++xlabel('Lead-vehicle position x_1'); ylabel('Lead-vehicle velocity x_2');
+diff --git a/terminalRegion/linSys/src/setOptsInternal.m b/terminalRegion/linSys/src/setOptsInternal.m
+index fbe892f..6b98b75 100644
+--- a/terminalRegion/linSys/src/setOptsInternal.m
++++ b/terminalRegion/linSys/src/setOptsInternal.m
+@@ -126,7 +126,7 @@ function optsInternal = setOptsInternal(benchmark,Opts,Param)
+     end
+ 
+     %% Solver options
+-    yalmipOptions = sdpsettings('allownonconvex',0,'solver','mosek','verbose',0);
++    yalmipOptions = sdpsettings('allownonconvex',0,'solver','sedumi','verbose',0);
+ 
+     %% Struct Initialization
+     
+diff --git a/terminalRegion/nonlinSysOpt/@computeTermRegNonlinSysLinApproach/solveOptProblem.m b/terminalRegion/nonlinSysOpt/@computeTermRegNonlinSysLinApproach/solveOptProblem.m
+index af070e7..7c08e64 100644
+--- a/terminalRegion/nonlinSysOpt/@computeTermRegNonlinSysLinApproach/solveOptProblem.m
++++ b/terminalRegion/nonlinSysOpt/@computeTermRegNonlinSysLinApproach/solveOptProblem.m
+@@ -198,7 +198,7 @@ constraints = [constraints, -1e-6 <= var_slackRCI];
+ constraints = [constraints, 0 <= var_scaleOut];
+ 
+ % solve
+-settings = sdpsettings('solver','mosek','allownonconvex',false, ...
++settings = sdpsettings('solver','sedumi','allownonconvex',false, ...
+     'verbose',0);
+ sol_diagnostics = optimize(constraints,objective,settings);
+ cvx_time = sol_diagnostics.solvertime;

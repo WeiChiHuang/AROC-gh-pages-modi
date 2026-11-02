@@ -1,160 +1,67 @@
-<!doctype html>
-<html lang="en" data-bs-theme="light">
+<!DOCTYPE html>
+
+<html data-bs-theme="light" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Generator Space Control | AROC - A Tool for Automated Controller Synthesis</title>
-
-    <meta name="author" content="TODO"> <!-- TODO -->
-    <meta name="description" content="TODO"><!-- TODO -->
-    <meta name="keywords" content="AROC, TODO"><!-- TODO -->
-
-    <link rel="icon" type="image/x-icon" href="../../data/images/ArocLogo-icon.png">
-    <!-- Compatibility Mode -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-
-    <!-- Font Newsreader-->
-    <link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet">
-
-    <!-- Bootstrap css-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="../../styles/css.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <!-- Timeline -->
-    <link href="../../styles/timeline.css" rel="stylesheet">
-
-    <!-- MathJax -->
-    <script src="https://cdn.jsdelivr.net/npm/polyfill-library@latest/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-</head>
-
-<body>
-<nav class="navbar bg-dark navbar-expand-lg fixed-top" data-bs-theme="dark">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="../../index.html"> <img src="../../data/images/ArocLogo-icon.png"/></a>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item navbar-text">
-                    <div class="d-block d-lg-none">
-                        <hr/>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#model-predictive-control" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Generator Space Control
-                    </a>
-                    <!--                    <ul class="dropdown-menu">-->
-                    <!--&lt;!&ndash;                        <li><a class="dropdown-item" href="#stirredtankreactor">Stirred Tank Reactor</a></li>&ndash;&gt;-->
-                    <!--                    </ul>-->
-                </li>
-
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#release-notes">Release Notes</a>-->
-                <!--                </li>-->
-                <li class="nav-item navbar-text">
-                    <div class="d-block d-lg-none">
-                        <hr/>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://github.com/TUMcps/Aroc"><i class="bi bi-github"></i> GitHub</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="../../manual/index.html"><i class="bi bi-file-earmark-pdf-fill"></i> Manual</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../pages/publications/index.html"><i class="bi bi-file-text-fill"></i> Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../pages/archive/index.html"><i class="bi bi-archive-fill"></i> Archive</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://de.mathworks.com/matlabcentral/fileexchange/81923-aroc"><i
-                            class="bi bi-box-seam-fill"></i> Matlab</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container" id="model-predictive-control">
-    <div class="row space-before">
-        <div class="col-12 col-lg-6 col-xl-6 order-0 order-md-0">
-            <h2><b>Generator Space Control</b></h2>
-            <p>
-                Description TODO
-            </p>
-
-        </div>
-        <div class="col-12 col-lg-6 col-xl-6 order-0 order-lg-1 text-center">
-            <object id="mpc-svg" type="image/svg+xml" data="../../data/images/latex/figures/generatorSpaceControl/generatorSpaceControl_car_1.tikz.svg">
-                Your browser does not support SVG
-            </object>
-        </div>
-    </div>
-
-    <!-- Stirred Tank Reactor Section -->
-    <!-- ID for navigation reference -->
-    <hr id=""/>
-    <div class="row space-before">
-        <div class="col-12">
-            <!-- Section title -->
-
-            <div class="col-12">
-                <h5>Example</h5>
-                <div class="position-relative">
-                    <iframe class="code code-lg"
-                            src="../../data/matlab/scripts/website/generatorSpaceControl/example_genSpaceContr_ship.html"></iframe>
-                    <div class="position-absolute top-0 end-0 translate-middle-x">
-                        <div class="code-btn-box">
-                            <a class="btn btn-outline-secondary btn-sm"
-                               href="../../data/matlab/scripts/website/generatorSpaceControl/example_genSpaceContr_ship.mlx"
-                               title="Download as MATLAB Live Script"><i class="bi bi-download"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- footer -->
-    <div class="row space-before">
-        <hr/>
-        <div class="col-12 col-md-6">Copyright &copy; 2022 - All Rights Reserved - <a href="https://www.tum.de/en/" target="_blank">Technische Universit&auml;t M&uuml;nchen</a></div>
-        <div class="col-12 col-md-6">Website by <a href="https://www6.in.tum.de/people/niklas-kochdumper-msc/" target="_blank">Niklas Kochdumper, YongKuan Zhang, Wei-Chi Huang & <a href="http://www.os-templates.com/" title="Free Website Templates" target="_blank">OS Templates</a><</a></div>
-    </div>
-
-</div>
-
-<!-- Load Bootstrap at the very end -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-<script>
-    const navLinks = document.querySelectorAll('.nav-item')
-    const menuToggle = document.getElementById('navbarToggler')
-    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false})
-
-    navLinks.forEach((l) => {
-        l.addEventListener('click', () => { bsCollapse.toggle() })
-    })
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Generator Space Control | AROC</title>
+<meta content="AROC team, Technische Universität München" name="author"/>
+<meta content="AROC toolbox: verified controller synthesis, model predictive control, motion planning, and safe terminal regions." name="description"/>
+<meta content="AROC, controller synthesis, reachability analysis, MATLAB, model predictive control" name="keywords"/>
+<link href="../../data/images/ArocLogo-icon.png" rel="icon" type="image/x-icon"/>
+<!-- Compatibility Mode -->
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<!-- Font Newsreader-->
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/newsreader@4.5.10/index.min.css " rel="stylesheet"/>
+<!-- Bootstrap css-->
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" rel="stylesheet"/>
+<link href="../../styles/css.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+<!-- Timeline -->
+<link href="../../styles/timeline.css" rel="stylesheet"/>
+<!-- MathJax -->
+<script async="" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-<!--<script>-->
-<!--    setInterval(() => {-->
+<link href="../../styles/refresh.css?v=de9fdccf75" rel="stylesheet"/><link href="../../styles/cora-theme.css?v=7ccab896ec" rel="stylesheet"/></head>
+<body>
+<nav aria-label="Main navigation" class="navbar bg-dark navbar-expand-xl fixed-top" data-bs-theme="dark"><div class="container-fluid">
+<a aria-label="AROC home" class="navbar-brand" href="../../index.html"><img alt="AROC" decoding="async" height="61" loading="lazy" src="../../data/images/ArocLogo-icon.png" width="63"/></a>
+<button aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarToggler" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarToggler"><ul class="navbar-nav me-auto"><li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Features</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="../../index.html#motion-primitive-based-control">Motion Primitive Based Control</a></li><li><a class="dropdown-item" href="../../index.html#model-predictive-control">Model Predictive Control</a></li><li><a class="dropdown-item" href="../../index.html#motion-planning">Motion Planning</a></li><li><a class="dropdown-item" href="../../index.html#safe-terminal-regions">Safe Terminal Regions</a></li><li><a class="dropdown-item" href="../../index.html#conformant-synthesis">Conformant Synthesis</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="../../index.html#get-started">Get Started</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#examples">Examples</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#animations">Animations</a></li></ul>
+<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/TUMcps/AROC"><i aria-hidden="true" class="bi bi-github"></i>GitHub</a></li><li class="nav-item"><a class="nav-link" href="../../manual/index.html"><i aria-hidden="true" class="bi bi-file-earmark-text-fill"></i>Manual</a></li><li class="nav-item"><a class="nav-link" href="../../pages/publications/index.html"><i aria-hidden="true" class="bi bi-journal-text"></i>Publications</a></li><li class="nav-item"><a class="nav-link" href="../../pages/archive/index.html"><i aria-hidden="true" class="bi bi-archive-fill"></i>Archive</a></li></ul></div></div></nav>
+<div class="container" id="generator-space-control">
+<p class="breadcrumbs"><a href="../../index.html">AROC</a> / <a href="../../index.html#animations">Animations</a> / Generator Space Control</p><div class="feature-hero">
+<div class="feature-intro">
+<p class="eyebrow">METHOD · RECORDED ANIMATION</p><h1>Generator Space Control</h1>
+<p>Parameterize the control law in the generator space of a zonotope. This avoids enumerating all parallelotope vertices; the number of generator-related optimization problems grows linearly with state dimension in the construction described in the manual. This is not a claim about total runtime scaling.</p>
+</div>
+<div class="feature-visual" id="animation"><div class="result-animation animation-compact" data-autoplay="true" data-source="../../data/animations/example_genSpaceContr_car.json"><img alt="Recorded MATLAB result: Generator-space car control" loading="lazy" src="../../data/results/full-suite/example_genSpaceContr_car/figure-01.png"/></div><p class="animation-links"><a href="../../pages/reproduction/index.html#example_genSpaceContr_car">Run record &amp; checks</a><a href="../../data/results/full-suite/example_genSpaceContr_car/source.m">MATLAB source</a><a download="" href="../../data/animations/example_genSpaceContr_car.json">Animation data</a><a download="" href="../../data/animations/example_genSpaceContr_car.svg">Animated SVG</a></p></div>
+</div>
+<!-- Stirred Tank Reactor Section -->
+<!-- ID for navigation reference -->
+<hr/>
+<div class="row space-before">
+<div class="col-12">
+<!-- Section title -->
+<div class="col-12">
+<h5>Example</h5><p>Additional benchmark source. The animation above links to its own executed example, result data, and checks.</p>
+<details class="source-disclosure"><summary>View MATLAB example code</summary><div class="position-relative">
+<iframe class="code code-lg" loading="lazy" src="../../data/examples/example_genSpaceContr_ship.html" title="generator space control example source"></iframe>
+<div class="position-absolute top-0 end-0 translate-middle-x">
+<div class="code-btn-box">
+<a class="btn btn-outline-secondary btn-sm" download="" href="../../data/examples/example_genSpaceContr_ship.m" title="Download MATLAB source (.m)"><i class="bi bi-download"></i></a>
+</div>
+</div>
+</div></details>
+</div>
+</div>
+</div>
+<!-- footer -->
+<section data-case-id="example_genSpaceContr_car" data-execution-group="initial controller batch (SeDuMi available)" id="full-suite-result"><h2>Reproduction files</h2><details class="static-result"><summary>Static result and vector figure</summary><figure><a href="../../data/results/full-suite/example_genSpaceContr_car/figure-01.svg"><img alt="Reproduced output of example_genSpaceContr_car" loading="lazy" src="../../data/results/full-suite/example_genSpaceContr_car/figure-01.png"/></a><figcaption>Output from example_genSpaceContr_car, with its original benchmark parameters. The listed sampled checks passed.</figcaption></figure></details><p><a href="../reproduction/index.html#example_genSpaceContr_car">Execution record and original test outcomes</a> · <a href="../../data/results/full-suite/example_genSpaceContr_car/source.m">Example source</a> · <a href="../../data/results/full-suite/example_genSpaceContr_car/plot-data.mat">Plot data (.mat)</a></p></section><footer class="site-footer"><p>AROC · Technische Universität München</p><p>Website by Niklas Kochdumper, Yongkuan Zhang, and Wei-Chi Huang. Original template: <a href="https://www.os-templates.com/">OS Templates</a>.</p><a href="https://www.tum.de/en/">Technische Universität München</a></footer>
+</div>
+<!-- Load Bootstrap at the very end -->
+<script crossorigin="anonymous" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!--        const obj = document.getElementById("mpc-svg");-->
 <!--        const src = obj.data;-->
 <!--        obj.data = ""; -->
@@ -163,6 +70,5 @@
 <!--        }, 20);-->
 <!--    }, 5500);-->
 <!--</script>-->
-
-</body>
+<script src="../../scripts/site.js"></script><script defer="" src="../../scripts/result-animation.js?v=5ea52d42ac"></script></body>
 </html>

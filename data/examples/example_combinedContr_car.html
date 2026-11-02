@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_combinedContr_car</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_combinedContr_car.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates the Reachset Optimal Control Algorithm on the 
+% turn right maneuver of a car
+
+% load benchmark parameter
+Param = param_car();
+
+% define algorithm options
+Opts = [];
+
+Opts.N = 10;                  % number of time steps
+Opts.reachSteps = 5;          % number of reachability steps (optimization)
+Opts.reachStepsFin = 25;      % num. of reach. steps (final reachable set)
+Opts.maxIter = 3;             % max. number of iterations for optimization
+Opts.finStateCon = false;     % final reach. set in shifted init. set
+Opts.scale = [0.3;0.7];       % scaling factor for tightend input set
+Opts.Q = diag([0.5 1 1 1]);   % state weighting matrix
+Opts.R = 0.02*eye(2);         % input weighting matrix
+Opts.Qff = diag([1,10,1,1]);  % state weighting matrix (feedforward contr.)
+Opts.Rff = 0.01*eye(2);       % input weighting matrix (feedforward contr.)
+Opts.refTraj.Q = eye(4);      % state weighting matrix (reference traj.)
+Opts.refTraj.R = Opts.Rff;    % input weighting matrix (reference traj.)
+
+% offline phase computations
+clock = tic;
+[objContr,res] = combinedControl(&#x27;car&#x27;,Param,Opts);
+tComp = toc(clock);
+
+disp([&#x27;Computation time: &#x27;,num2str(tComp),&#x27; s&#x27;]);
+
+% simulation 
+[resSim,~,~] = simulateRandom(objContr);
+
+% visualization
+figure; hold on; box on
+plotReach(res,[1,2],[.7 .7 .7]);
+plotReachTimePoint(res,[1,2],&#x27;b&#x27;);
+plot(Param.R0,[1,2],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[1,2],&#x27;k&#x27;);
+xlabel(&#x27;v&#x27;); ylabel(&#x27;\phi&#x27;);
+
+figure; hold on; box on
+plotReach(res,[3,4],[.7 .7 .7]);
+plotReachTimePoint(res,[3,4],&#x27;b&#x27;);
+plot(Param.R0,[3,4],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+plotSimulation(resSim,[3,4],&#x27;k&#x27;);
+xlabel(&#x27;x&#x27;); ylabel(&#x27;y&#x27;);</code></pre></body></html>

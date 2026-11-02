@@ -1,0 +1,11 @@
+diff --git a/examples/conformantSynthesis/example_conformantSynthesis_platoon.m b/examples/conformantSynthesis/example_conformantSynthesis_platoon.m
+index 2b57fd3..4353264 100644
+--- a/examples/conformantSynthesis/example_conformantSynthesis_platoon.m
++++ b/examples/conformantSynthesis/example_conformantSynthesis_platoon.m
+@@ -40,4 +40,4 @@ figure; hold on; box on;
+ R = reachSetConformance(benchmark,M{1},Wint,Vint);
+ plot(R,[1,2],'FaceColor',[.6 .6 .6],'EdgeColor','none');
+ plot(M{1}.x(1,:),M{1}.x(2,:),'k');
+-xlabel('p_1'); ylabel('p_2');
+\ No newline at end of file
++xlabel('x_1 (lead-vehicle position)'); ylabel('x_2 (lead-vehicle velocity)');

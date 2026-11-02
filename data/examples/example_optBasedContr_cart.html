@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AROC example source</title><style>body{font:15px/1.6 system-ui;margin:24px;color:#20324a}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;padding:24px}a{color:#165bb5}</style></head><body><h1>example_optBasedContr_cart</h1><p>Source from AROC 2026. This code view is not an execution report. Install the dependencies listed in the manual before running it.</p><a href="example_optBasedContr_cart.m" download>Download MATLAB source (.m)</a><pre><code>% This script demonstrates the control algorithm that is based on the
+% optimization over reachable sets for the cart benchmark
+
+% benchmark parameter
+Param = param_cart(); 
+
+% algorithm settings
+Opts = [];
+
+Opts.N = 10;                    % number of time steps
+Opts.refTraj.Q = diag([5,5]);   % state weighting matrix (reference traj.)
+Opts.refTraj.R = 1e-3;          % input weighthig matrix (reference traj.)
+
+% controller synthesis
+[objContr,res] = optimizationBasedControl(&#x27;cart&#x27;,Param,Opts);
+
+% visualization
+figure; hold on; box on
+plotReach(res,[1,2],[.7 .7 .7]);
+plotReachTimePoint(res,[1,2],&#x27;b&#x27;);
+plot(Param.R0,[1,2],&#x27;FaceColor&#x27;,&#x27;w&#x27;,&#x27;EdgeColor&#x27;,&#x27;k&#x27;);
+xlabel(&#x27;x&#x27;); ylabel(&#x27;v&#x27;);</code></pre></body></html>

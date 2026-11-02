@@ -1,0 +1,785 @@
+{
+  "date": "2026-10-19",
+  "matlab": "24.2.0.3212159 (R2024b) Update 9",
+  "seed": 20261019.0,
+  "AROCCommit": "6ba0295754d935b2bf540fab904ebc235a2d7a5c",
+  "CORA": "v2026.0.1",
+  "YALMIP": "R20250626",
+  "CasADi": "3.7.2",
+  "convexSolver": "Per-case environments: initial controller batch with SeDuMi, licensed terminal and remaining batches with MOSEK 11.0 available. See executionGroup and runGroups.",
+  "mosekAvailability": "Renewed license passed a fresh-process solve; initial expired-license environment retained in runGroups.",
+  "exampleCount": 18,
+  "unitTestCount": 20,
+  "cases": [
+    {
+      "id": "example_optBasedContr_car",
+      "kind": "example",
+      "source": "examples/optimizationBasedControl/example_optBasedContr_car.m",
+      "algorithm": "optimizationBasedControl",
+      "status": "executed",
+      "seconds": 1273.7888386,
+      "checks": {
+        "resSim_sampledInputConstraints": true,
+        "sampledEndpointsInReachSet": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "initial controller batch (SeDuMi available)",
+      "solverNotes": [
+        "Optimization reached the configured iteration limit; no optimality claim."
+      ]
+    },
+    {
+      "id": "example_convInterContr_car",
+      "kind": "example",
+      "source": "examples/convexInterpolationControl/example_convInterContr_car.m",
+      "algorithm": "convexInterpolationControl",
+      "status": "executed",
+      "seconds": 1095.132197,
+      "checks": {
+        "resSim_sampledInputConstraints": true,
+        "sampledEndpointsInReachSet": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png",
+        "figure-03.png",
+        "figure-04.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "initial controller batch (SeDuMi available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_genSpaceContr_car",
+      "kind": "example",
+      "source": "examples/generatorSpaceControl/example_genSpaceContr_car.m",
+      "algorithm": "generatorSpaceControl",
+      "status": "executed",
+      "seconds": 34.4603172,
+      "checks": {
+        "resSim_sampledInputConstraints": true,
+        "sampledEndpointsInReachSet": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "initial controller batch (SeDuMi available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_polyContr_car",
+      "kind": "example",
+      "source": "examples/polynomialControl/example_polyContr_car.m",
+      "algorithm": "polynomialControl",
+      "status": "executed",
+      "seconds": 126.6690285,
+      "checks": {
+        "resSim_sampledInputConstraints": true,
+        "sampledEndpointsInReachSet": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "initial controller batch (SeDuMi available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_combinedContr_car",
+      "kind": "example",
+      "source": "examples/combinedControl/example_combinedContr_car.m",
+      "algorithm": "combinedControl",
+      "status": "executed",
+      "seconds": 226.4609193,
+      "checks": {
+        "resSim_sampledInputConstraints": true,
+        "sampledEndpointsInReachSet": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "initial controller batch (SeDuMi available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_safetyNetContr_car",
+      "kind": "example",
+      "source": "examples/safetyNetControl/example_safetyNetContr_car.m",
+      "algorithm": "safetyNetControl",
+      "status": "executed",
+      "seconds": 7456.4701208,
+      "checks": {
+        "resSim_sampledInputConstraints": true,
+        "sampledEndpointsInReachSet": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png",
+        "figure-03.png",
+        "figure-04.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "initial controller batch (SeDuMi available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_linSysMPC_doubleIntegrator",
+      "kind": "example",
+      "source": "examples/linSysMPC/example_linSysMPC_doubleIntegrator.m",
+      "algorithm": "linSysMPC",
+      "status": "executed",
+      "seconds": 34.9896238,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_reachsetMPC_artificialSystem1",
+      "kind": "example",
+      "source": "examples/reachsetMPC/example_reachsetMPC_artificialSystem1.m",
+      "algorithm": "reachsetMPC",
+      "status": "executed",
+      "seconds": 68.9498387,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_reachsetMPC_stirredTankReactor1",
+      "kind": "example",
+      "source": "examples/reachsetMPC/example_reachsetMPC_stirredTankReactor1.m",
+      "algorithm": "reachsetMPC",
+      "status": "executed",
+      "seconds": 254.8721135,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_maneuverAutomaton_car1",
+      "kind": "example",
+      "source": "examples/maneuverAutomaton/example_maneuverAutomaton_car1.m",
+      "algorithm": "maneuverAutomaton",
+      "status": "executed",
+      "seconds": 171.1568351,
+      "checks": {},
+      "figures": [
+        "website-figure.png",
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "webFigureNote": "Website figure re-rendered from the saved workspace; original plots retained. No controller or trajectory recomputation.",
+      "solverNotes": []
+    },
+    {
+      "id": "example_conformantSynthesis_platoon",
+      "kind": "example",
+      "source": "examples/conformantSynthesis/example_conformantSynthesis_platoon.m",
+      "algorithm": "conformantSynthesis",
+      "status": "executed",
+      "seconds": 9.4329217,
+      "checks": {},
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_conformantSynthesis_car",
+      "kind": "example",
+      "source": "examples/conformantSynthesis/example_conformantSynthesis_car.m",
+      "algorithm": "conformantSynthesis",
+      "status": "executed",
+      "seconds": 14.146481,
+      "checks": {},
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_termReg_linSys_doubleIntegrator",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_linSys_doubleIntegrator.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 38.3278737,
+      "checks": {},
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_termReg_nonlinSysOpt_SD_cart",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysOpt_SD_cart.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 60.3225313,
+      "checks": {},
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "example_termReg_nonlinSysLinApproach_DT_cart",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysLinApproach_DT_cart.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 10.1462985,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "example_termReg_nonlinSysLinApproach_SD_robotArm",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysLinApproach_SD_robotArm.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 132.4820525,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "example_termReg_nonlinSysPolyApproach_SD_cartpole",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_nonlinSysPolyApproach_SD_cartpole.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 55.4647778,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "example_termReg_subpaving_artificialSystem",
+      "kind": "example",
+      "source": "examples/terminalRegion/example_termReg_subpaving_artificialSystem.m",
+      "algorithm": "terminalRegion",
+      "status": "executed",
+      "seconds": 78.4271084,
+      "checks": {
+        "res_sampledInputConstraints": true
+      },
+      "figures": [
+        "figure-01.png",
+        "figure-02.png"
+      ],
+      "error": "",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testCombinedControl_TestCombinedControl",
+      "kind": "unit-test",
+      "source": "testCombinedControl/TestCombinedControl",
+      "algorithm": "testCombinedControl",
+      "status": "passed",
+      "seconds": 341.5131462,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testCombinedControl/TestCombinedControl'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 338.7003\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   338.7003 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testConformantSynthesis_TestNonlinearConformanceChecking",
+      "kind": "unit-test",
+      "source": "testConformantSynthesis/TestNonlinearConformanceChecking",
+      "algorithm": "testConformantSynthesis",
+      "status": "passed",
+      "seconds": 21.6387423,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testConformantSynthesis/TestNonlinearConformanceChecking'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 19.7891\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   19.7891 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testConformantSynthesis_TestLinearConformanceChecking",
+      "kind": "unit-test",
+      "source": "testConformantSynthesis/TestLinearConformanceChecking",
+      "algorithm": "testConformantSynthesis",
+      "status": "passed",
+      "seconds": 8.5448064,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testConformantSynthesis/TestLinearConformanceChecking'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 7.3873\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   7.3873 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testConvexInterpolationControl_TestLinearControlLaw",
+      "kind": "unit-test",
+      "source": "testConvexInterpolationControl/TestLinearControlLaw",
+      "algorithm": "testConvexInterpolationControl",
+      "status": "passed",
+      "seconds": 71.2751417,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testConvexInterpolationControl/TestLinearControlLaw'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 70.1026\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   70.1026 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testConvexInterpolationControl_TestExactControlLaw",
+      "kind": "unit-test",
+      "source": "testConvexInterpolationControl/TestExactControlLaw",
+      "algorithm": "testConvexInterpolationControl",
+      "status": "passed",
+      "seconds": 1029.1997186,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testConvexInterpolationControl/TestExactControlLaw'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 1.0277e+03\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   1027.6731 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testConvexInterpolationControl_TestExtendedOptimizationHorizon",
+      "kind": "unit-test",
+      "source": "testConvexInterpolationControl/TestExtendedOptimizationHorizon",
+      "algorithm": "testConvexInterpolationControl",
+      "status": "passed",
+      "seconds": 61.0105026,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testConvexInterpolationControl/TestExtendedOptimizationHorizon'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 59.5444\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   59.5444 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testGeneratorSpaceControl_TestGeneratorSpaceControl",
+      "kind": "unit-test",
+      "source": "testGeneratorSpaceControl/TestGeneratorSpaceControl",
+      "algorithm": "testGeneratorSpaceControl",
+      "status": "passed",
+      "seconds": 47.7588453,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testGeneratorSpaceControl/TestGeneratorSpaceControl'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 46.5854\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   46.5854 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testGeneratorSpaceControl_TestExtendedOptimizationHorizon",
+      "kind": "unit-test",
+      "source": "testGeneratorSpaceControl/TestExtendedOptimizationHorizon",
+      "algorithm": "testGeneratorSpaceControl",
+      "status": "passed",
+      "seconds": 44.7107783,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testGeneratorSpaceControl/TestExtendedOptimizationHorizon'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 43.7758\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   43.7758 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testLinSysMPC_TestModelPredictiveControlLinearSystems",
+      "kind": "unit-test",
+      "source": "testLinSysMPC/TestModelPredictiveControlLinearSystems",
+      "algorithm": "testLinSysMPC",
+      "status": "passed",
+      "seconds": 31.7034231,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testLinSysMPC/TestModelPredictiveControlLinearSystems'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 30.7920\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   30.792 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testManeuverAutomaton_TestManeuverAutomaton",
+      "kind": "unit-test",
+      "source": "testManeuverAutomaton/TestManeuverAutomaton",
+      "algorithm": "testManeuverAutomaton",
+      "status": "passed",
+      "seconds": 93.4923443,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testManeuverAutomaton/TestManeuverAutomaton'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 92.3638\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   92.3638 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testOptimizationBasedControl_TestLinearSystem",
+      "kind": "unit-test",
+      "source": "testOptimizationBasedControl/TestLinearSystem",
+      "algorithm": "testOptimizationBasedControl",
+      "status": "passed",
+      "seconds": 688.9741626,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testOptimizationBasedControl/TestLinearSystem'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 688.0111\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   688.0111 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": [
+        "Optimization reached the configured iteration limit; no optimality claim."
+      ]
+    },
+    {
+      "id": "testOptimizationBasedControl_TestNonlinearSystem",
+      "kind": "unit-test",
+      "source": "testOptimizationBasedControl/TestNonlinearSystem",
+      "algorithm": "testOptimizationBasedControl",
+      "status": "passed",
+      "seconds": 1426.2811589,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testOptimizationBasedControl/TestNonlinearSystem'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 1.4249e+03\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   1424.8862 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": [
+        "Optimization reached the configured iteration limit; no optimality claim."
+      ]
+    },
+    {
+      "id": "testPolynomialControl_TestPolynomialControl",
+      "kind": "unit-test",
+      "source": "testPolynomialControl/TestPolynomialControl",
+      "algorithm": "testPolynomialControl",
+      "status": "passed",
+      "seconds": 105.5929984,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testPolynomialControl/TestPolynomialControl'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 104.1127\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   104.1127 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testReachsetMPC_TestReachsetModelPredictiveControl",
+      "kind": "unit-test",
+      "source": "testReachsetMPC/TestReachsetModelPredictiveControl",
+      "algorithm": "testReachsetMPC",
+      "status": "passed",
+      "seconds": 76.4699965,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testReachsetMPC/TestReachsetModelPredictiveControl'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 75.1842\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   75.1842 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testSafetyNetControl_TestLQRComfortController",
+      "kind": "unit-test",
+      "source": "testSafetyNetControl/TestLQRComfortController",
+      "algorithm": "testSafetyNetControl",
+      "status": "passed",
+      "seconds": 1433.6414635,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testSafetyNetControl/TestLQRComfortController'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 1.4325e+03\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   1432.5379 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testSafetyNetControl_TestMPCComfortController",
+      "kind": "unit-test",
+      "source": "testSafetyNetControl/TestMPCComfortController",
+      "algorithm": "testSafetyNetControl",
+      "status": "passed",
+      "seconds": 888.8148725,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testSafetyNetControl/TestMPCComfortController'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 886.7947\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   886.7947 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-remaining (MOSEK available)",
+      "priorAttempts": [
+        {
+          "log": "attempt-01.log.gz",
+          "statusFile": "attempt-01-status.json"
+        }
+      ],
+      "retryNotes": "retry-notes.txt",
+      "solverNotes": []
+    },
+    {
+      "id": "testTerminalRegion_TestLinSys",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestLinSys",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 69.0452644,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestLinSys'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 63.8798\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   63.8798 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testTerminalRegion_TestSubpaving",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestSubpaving",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 76.4998493,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestSubpaving'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 75.9707\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   75.9707 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": []
+    },
+    {
+      "id": "testTerminalRegion_TestNonlinSysOpt_Linearization_basedApproach",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 23.4818096,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 22.9988\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   22.9988 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    },
+    {
+      "id": "testTerminalRegion_TestNonlinSysOpt_Polynomialization_basedApproach",
+      "kind": "unit-test",
+      "source": "testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach",
+      "algorithm": "testTerminalRegion",
+      "status": "passed",
+      "seconds": 45.5338593,
+      "checks": {
+        "passed": true,
+        "failed": false,
+        "incomplete": false
+      },
+      "figures": [],
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 45.0106\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   45.0106 seconds testing time.\n\n",
+      "exportNotes": "",
+      "executionGroup": "licensed-terminal (MOSEK available)",
+      "solverNotes": [
+        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
+      ]
+    }
+  ],
+  "runGroups": [
+    {
+      "id": "initial-controllers",
+      "scope": "First six controller examples",
+      "metadata": {
+        "date": "2026-10-19",
+        "matlab": "24.2.0.3212159 (R2024b) Update 9",
+        "seed": 20261019.0,
+        "AROCCommit": "6ba0295754d935b2bf540fab904ebc235a2d7a5c",
+        "CORA": "v2026.0.1",
+        "YALMIP": "R20250626",
+        "CasADi": "3.7.2",
+        "convexSolver": "SeDuMi 1.3; two hard-coded MOSEK selections changed locally",
+        "mosekAvailability": "MOSEK 11.0 installed; license expired (1001)",
+        "exampleCount": 18,
+        "unitTestCount": 20
+      }
+    },
+    {
+      "id": "licensed-terminal",
+      "metadata": {
+        "date": "2026-10-19",
+        "matlab": "24.2.0.3212159 (R2024b) Update 9",
+        "seed": 20261019.0,
+        "AROCCommit": "6ba0295754d935b2bf540fab904ebc235a2d7a5c",
+        "CORA": "v2026.0.1",
+        "YALMIP": "R20250626",
+        "CasADi": "3.7.2",
+        "convexSolver": "MOSEK 11.0; upstream solver selections retained",
+        "mosekAvailability": "Renewed license: fresh MATLAB process solved successfully (code 0)",
+        "exampleCount": 6,
+        "unitTestCount": 4
+      }
+    },
+    {
+      "id": "licensed-remaining",
+      "metadata": {
+        "date": "2026-10-19",
+        "matlab": "24.2.0.3212159 (R2024b) Update 9",
+        "seed": 20261019.0,
+        "AROCCommit": "6ba0295754d935b2bf540fab904ebc235a2d7a5c",
+        "CORA": "v2026.0.1",
+        "YALMIP": "R20250626",
+        "CasADi": "3.7.2",
+        "convexSolver": "MOSEK 11.0 available; upstream solver selections retained",
+        "mosekAvailability": "Renewed license: fresh MATLAB process solved successfully (code 0)",
+        "exampleCount": 6,
+        "unitTestCount": 16
+      }
+    }
+  ]
+}
