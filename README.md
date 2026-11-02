@@ -157,6 +157,9 @@ The report and four actual screenshots are included in the website archive.
 Newsreader headings, Bootstrap body text, dark navigation, white figure panels
 and thin separators. The animation build reapplies `tools/apply_cora_theme.py`
 after integration so the shared theme and canonical introduction are preserved.
+The homepage keeps two matching quick links for getting started and the
+manual. One compact link groups the algorithm, example and test counts above
+the left-aligned introduction; the animation navigation remains available.
 
 See `docs/maintenance.md` for adding a feature, example, publication, video, or
 archived release. Keep the documentation and reproducibility records together

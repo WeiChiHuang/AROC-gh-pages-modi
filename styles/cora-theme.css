@@ -15,12 +15,13 @@ a { color:#0d6efd; } a:hover { color:#0a58ca; }
 .nav-link .bi { margin-right:4px; }
 .hero { max-width:none; margin:8px 0 55px; text-align:center; }
 .hero-logo { width:360px; max-width:80%; margin:0 auto 10px; }
-.hero h1 { font:400 16px/1.5 var(--bs-body-font-family); margin:0 auto 22px; }
-.hero .hero-abstract { max-width:none; text-align:left; margin:50px 0 22px; }
-.hero-actions { gap:10px 24px; margin:18px 0; }
-.hero-actions .btn { font-size:.9rem; border-radius:3px; }
-.evidence-strip { margin:20px auto; font-size:.75rem; gap:8px; }
-.evidence-strip span { border:1px solid #dee2e6; background:#f8f9fa; border-radius:2px; padding:3px 8px; }
+.hero h1 { font:400 16px/1.5 var(--bs-body-font-family); margin:0 auto; }
+.hero .hero-abstract { max-width:none; text-align:left; margin:75px 0 22px; }
+.hero-actions { gap:12px; margin:22px 0 14px; }
+.hero-actions .btn { display:inline-flex; align-items:center; justify-content:center; min-width:132px; min-height:38px; font-size:.9rem; border-radius:3px; }
+.evidence-strip { display:inline-block; max-width:100%; margin:0 auto; padding:5px 10px; border:1px solid #dee2e6; border-radius:3px; background:#f8f9fa; color:#0d6efd; font-size:.8rem; line-height:1.6; text-wrap:balance; }
+.evidence-strip span { white-space:nowrap; }
+.evidence-strip:hover { background:#eef2f6; text-decoration:underline; }
 .evidence-strip b { color:#212529; }
 .workflow { padding:24px 0 32px; border:0; border-bottom:1px solid #dee2e6; }
 .workflow h2 { font-size:1.5rem; }
@@ -71,8 +72,7 @@ mjx-container.MathJax { display:inline-block!important; max-width:100%; overflow
 @media(max-width:767px) {
  body { padding-top:80px; padding-bottom:40px; }
  .hero { margin:12px 0 32px; } .hero-logo { width:280px; }
- .hero .hero-abstract { margin-top:30px; }
- .hero-actions { gap:10px 16px; }
+ .hero .hero-abstract { margin-top:40px; }
  .feature-row { grid-template-columns:1fr; gap:20px; padding:30px 0; }
  .feature-row .result-animation { max-width:520px; margin:auto; }
  .feature-hero h1 { font-size:1.8rem; }
