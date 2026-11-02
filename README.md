@@ -136,6 +136,10 @@ The animation selector at `index.html#animations` covers all 18 recorded
 examples; 13 method pages and five homepage feature previews use the same
 player. Play/pause, reset, seek, speed and loop controls operate on saved
 data. Animation playback does not run a controller or solver in the browser.
+Animations start and loop automatically on entering view, including after
+scrolling back or returning to a visible tab. Choosing a new method also starts
+it automatically. Explicit pause, reset and seeking remain under user control;
+the system's reduced-motion preference is respected until Play is requested.
 Standalone animated SVG downloads are included for offline viewing. Serve the
 website over HTTP for interactive playback; opening HTML with `file://` can
 block JSON loading. The original numerical record and its diagnostic warnings

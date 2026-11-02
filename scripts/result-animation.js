@@ -5,7 +5,10 @@
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('.result-animation').forEach(host=>{
     const poster=host.querySelector('img');
-    let data, frame, playing=false, visible=false, progress=0, origin=0, start=0, generation=0, ready=false;
+    const autoplay=host.dataset.autoplay==='true';
+    let data, frame, playing=false, visible=false, progress=0, origin=0, start=0, generation=0, ready=false, loading=false;
+    // A temporary visibility pause must not cancel the requested playback.
+    let playRequested=autoplay, motionOverride=false;
     const panel=document.createElement('div'); panel.className='animation-panel';
     const controls=document.createElement('div'); controls.className='animation-controls';
     const play=document.createElement('button'); play.type='button'; play.className='btn btn-primary'; play.textContent='Play';
@@ -22,16 +25,17 @@
     let draw=()=>{};
     const pause=()=>{playing=false;cancelAnimationFrame(frame);play.textContent='Play';play.setAttribute('aria-pressed','false');};
     const paint=p=>{progress=Math.max(0,Math.min(1,p));seek.value=Math.round(progress*1000);draw(progress);};
-    const tick=now=>{if(!playing)return;paint(origin+(now-start)/10000*Number(speed.value));if(progress>=1){if(loop.checked){paint(0);origin=0;start=now;frame=requestAnimationFrame(tick);}else pause();}else frame=requestAnimationFrame(tick);};
-    const resume=()=>{if(!ready)return;if(progress>=1)paint(0);playing=true;origin=progress;start=performance.now();play.textContent='Pause';play.setAttribute('aria-pressed','true');frame=requestAnimationFrame(tick);};
-    play.addEventListener('click',()=>playing?pause():resume());
-    reset.addEventListener('click',()=>{pause();paint(0);});
-    seek.addEventListener('input',()=>{pause();paint(Number(seek.value)/1000);});
+    const tick=now=>{if(!playing)return;paint(origin+(now-start)/10000*Number(speed.value));if(progress>=1){if(loop.checked){paint(0);origin=0;start=now;frame=requestAnimationFrame(tick);}else{playRequested=false;pause();}}else frame=requestAnimationFrame(tick);};
+    const resume=()=>{if(!ready||playing)return;if(progress>=1)paint(0);playing=true;origin=progress;start=performance.now();play.textContent='Pause';play.setAttribute('aria-pressed','true');frame=requestAnimationFrame(tick);};
+    const syncPlayback=()=>{if(playRequested&&ready&&visible&&!document.hidden&&(!reduced.matches||motionOverride))resume();else pause();};
+    play.addEventListener('click',()=>{playRequested=!playing;if(playRequested)motionOverride=true;syncPlayback();});
+    reset.addEventListener('click',()=>{playRequested=false;pause();paint(0);});
+    seek.addEventListener('input',()=>{playRequested=false;pause();paint(Number(seek.value)/1000);});
     speed.addEventListener('change',()=>{if(playing){origin=progress;start=performance.now();}});
-    document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
-    reduced.addEventListener('change',()=>{if(reduced.matches)pause();});
+    document.addEventListener('visibilitychange',syncPlayback);
+    reduced.addEventListener('change',()=>{motionOverride=false;syncPlayback();});
     async function load(url){
-      const own=++generation;pause();ready=false;host.dataset.state='loading';
+      const own=++generation;pause();ready=false;loading=true;host.dataset.state='loading';
       host.setAttribute('aria-busy','true');
       host.querySelector('.animation-current-links')?.remove();
       play.disabled=true;seek.disabled=true;reset.disabled=true;
@@ -93,12 +97,13 @@
           host.append(links);
         }
         host.dispatchEvent(new CustomEvent('animationready',{detail:{caseId:data.caseId}}));
-        if(host.dataset.autoplay==='true'&&visible&&!reduced.matches)resume();
+        syncPlayback();
       }catch(error){if(own!==generation)return;host.dataset.state='error';host.setAttribute('aria-busy','false');panel.hidden=true;controls.hidden=true;host.querySelector('.animation-caption')?.remove();host.querySelector('.animation-legend')?.remove();host.querySelector('.animation-data-notes')?.remove();host.querySelector('.animation-diagnostic')?.remove();if(poster)poster.hidden=false;note.textContent='Animation unavailable. The static MATLAB result and source data remain available.';host.append(note);}
+      finally{if(own===generation)loading=false;}
     }
     const select=host.closest('section')?.querySelector('[data-animation-select]');
-    if(select)select.addEventListener('change',()=>{host.dataset.source=select.value;const option=select.options[select.selectedIndex];if(poster&&option.dataset.poster){poster.src=option.dataset.poster;poster.alt=option.textContent+' — static MATLAB result';}load(select.value);});
-    const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible&&!data&&!ready)load(host.dataset.source);if(!visible)pause();},{threshold:.15});
+    if(select)select.addEventListener('change',()=>{playRequested=autoplay;host.dataset.source=select.value;const option=select.options[select.selectedIndex];if(poster&&option.dataset.poster){poster.src=option.dataset.poster;poster.alt=option.textContent+' — static MATLAB result';}load(select.value);});
+    const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible&&!data&&!ready&&!loading)load(host.dataset.source);syncPlayback();},{threshold:.15});
     observer.observe(host);
   });
 })();
