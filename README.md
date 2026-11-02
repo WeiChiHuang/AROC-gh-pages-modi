@@ -92,8 +92,10 @@ The completed 2026-10-19 record has 18 executed examples and 20 passed test
 sections. The SafetyNet MPC section passed on a targeted fresh-process retry
 after a generated-function search-path repair in the runner. Its original
 failed log, status, and retry explanation are retained in that case's record.
-No algorithm constraints, sample counts, iteration limits, or assertions were
-relaxed. Solver iteration-limit and CORA diagnostics remain visible.
+That original run retained algorithm constraints, sample counts, iteration
+limits and assertions. Subsequent warning-resolution reruns are identified
+separately in the execution record, with their patches, settings and validation.
+Earlier warning-producing logs and sources remain downloadable.
 This coverage does not include every benchmark script in the repository.
 The unique-case record combines three isolated execution groups: the first
 six controller examples from the initial process, six terminal-region
@@ -118,6 +120,15 @@ above retain their separate configurations and validation records.
 The current archive summaries defer to the historical manuals rather than
 inventing release notes. Solver/runtime measurements are not advertised as
 cross-algorithm performance comparisons.
+
+The 2026-11-02 CORA warning repair reran the five affected terminal cases in
+isolated copies. Both test sections passed; the three examples completed.
+The loop now recognizes states unreachable from nonzero abstraction errors,
+whose correct asymptotic order is infinite. All 104 regression fixtures retain
+the same orders, and four saved terminal-region set matrices exactly match
+the earlier run. The patch, CORA license and validation JSON are linked under
+“Diagnostic warning fixes”. Optimization iteration-limit diagnostics remain
+visible until a replacement run passes its solver and original assertion checks.
 
 ## Maintenance
 

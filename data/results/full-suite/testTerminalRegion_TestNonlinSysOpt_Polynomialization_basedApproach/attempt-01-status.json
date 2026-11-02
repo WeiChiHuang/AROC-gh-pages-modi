@@ -1,0 +1,16 @@
+{
+  "id": "testTerminalRegion_TestNonlinSysOpt_Polynomialization_basedApproach",
+  "kind": "unit-test",
+  "source": "testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach",
+  "algorithm": "testTerminalRegion",
+  "status": "passed",
+  "seconds": 45.5338593,
+  "checks": {
+    "passed": true,
+    "failed": false,
+    "incomplete": false
+  },
+  "figures": [],
+  "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 45.0106\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   45.0106 seconds testing time.\n\n",
+  "exportNotes": ""
+}

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "date": "2026-11-02",
+  "examples": 3,
+  "testSectionsPassed": 2,
+  "abstractionOrderWarningOccurrences": 0,
+  "regression": {
+    "fixturesMatched": 104,
+    "spuriousWarningsAvoided": 31,
+    "ordersIncludingInfPreserved": true
+  },
+  "terminalGeometryCompared": [
+    {
+      "case": "example_termReg_nonlinSysOpt_SD_cart",
+      "set": "terminalRegionLin",
+      "maximumAbsoluteDifference": 0.0
+    },
+    {
+      "case": "example_termReg_nonlinSysOpt_SD_cart",
+      "set": "terminalRegionPoly",
+      "maximumAbsoluteDifference": 0.0
+    },
+    {
+      "case": "example_termReg_nonlinSysLinApproach_SD_robotArm",
+      "set": "terminalRegion",
+      "maximumAbsoluteDifference": 0.0
+    },
+    {
+      "case": "example_termReg_nonlinSysPolyApproach_SD_cartpole",
+      "set": "terminalRegion",
+      "maximumAbsoluteDifference": 0.0
+    }
+  ],
+  "comparisonTolerance": {
+    "relative": 1e-09,
+    "absolute": 1e-10
+  }
+}

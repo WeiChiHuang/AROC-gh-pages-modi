@@ -1,0 +1,28 @@
+--- a/contDynamics/@nonlinearSys/linReach_adaptive.m
++++ b/contDynamics/@nonlinearSys/linReach_adaptive.m
+@@ -841,6 +841,16 @@
+ % express G as function over sigma (implicitly)
+ Gzero = vecnorm(generators(Vdyn),1,2) == 0;
+ 
++% Error cannot propagate into states disconnected from all nonzero error
++% components. Their asymptotic order is legitimately Inf (e.g. constant
++% auxiliary input states). Do not wait for these orders to become finite.
++errorReachable = ~Gzero;
++for graphStep = 1:n
++    nextReachable = errorReachable | any(A(:,errorReachable) ~= 0,2);
++    if isequal(nextReachable,errorReachable), break; end
++    errorReachable = nextReachable;
++end
++
+ % compute q_i
+ % ... define G depending on sigmas (dependency on t!)
+ qi = Inf(n,1);
+@@ -867,7 +877,7 @@
+     % break loop if no lower value for q_i is computable
+     % CAUTION: are there cases where this is not a sufficient criterion?
+     % ... loop could break if all equations are linear (?)
+-    if all(qi < p+1)
++    if all(qi(errorReachable) < p+1)
+         break;
+     end
+     

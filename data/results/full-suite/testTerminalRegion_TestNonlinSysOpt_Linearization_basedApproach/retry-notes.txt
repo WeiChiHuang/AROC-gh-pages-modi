@@ -1,0 +1,5 @@
+Warning-resolution rerun, 2026-11-02
+
+CORA now excludes error-unreachable states from the finite-order stopping condition. Their legitimate Inf orders are retained. Original benchmark settings, solver choices and test assertions are unchanged.
+
+The prior warning-producing log, status and source are retained. Counts refer to unique cases; this retry replaces the displayed case and is not an additional test.

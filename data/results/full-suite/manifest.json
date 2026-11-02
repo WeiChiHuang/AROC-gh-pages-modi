@@ -266,17 +266,27 @@
       "source": "examples/terminalRegion/example_termReg_nonlinSysOpt_SD_cart.m",
       "algorithm": "terminalRegion",
       "status": "executed",
-      "seconds": 60.3225313,
+      "seconds": 72.8350719,
       "checks": {},
       "figures": [
         "figure-01.png"
       ],
       "error": "",
       "exportNotes": "",
-      "executionGroup": "licensed-terminal (MOSEK available)",
-      "solverNotes": [
-        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
-      ]
+      "executionGroup": "warning-terminal",
+      "warningResolution": {
+        "date": "2026-11-02",
+        "validation": "warning-terminal-validation.json",
+        "changes": "CORA finite-order termination fix; benchmark settings retained"
+      },
+      "priorAttempts": [
+        {
+          "log": "attempt-01.log.gz",
+          "statusFile": "attempt-01-status.json"
+        }
+      ],
+      "retryNotes": "retry-notes.txt",
+      "solverNotes": []
     },
     {
       "id": "example_termReg_nonlinSysLinApproach_DT_cart",
@@ -302,7 +312,7 @@
       "source": "examples/terminalRegion/example_termReg_nonlinSysLinApproach_SD_robotArm.m",
       "algorithm": "terminalRegion",
       "status": "executed",
-      "seconds": 132.4820525,
+      "seconds": 92.8876576,
       "checks": {
         "res_sampledInputConstraints": true
       },
@@ -311,10 +321,20 @@
       ],
       "error": "",
       "exportNotes": "",
-      "executionGroup": "licensed-terminal (MOSEK available)",
-      "solverNotes": [
-        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
-      ]
+      "executionGroup": "warning-terminal",
+      "warningResolution": {
+        "date": "2026-11-02",
+        "validation": "warning-terminal-validation.json",
+        "changes": "CORA finite-order termination fix; benchmark settings retained"
+      },
+      "priorAttempts": [
+        {
+          "log": "attempt-01.log.gz",
+          "statusFile": "attempt-01-status.json"
+        }
+      ],
+      "retryNotes": "retry-notes.txt",
+      "solverNotes": []
     },
     {
       "id": "example_termReg_nonlinSysPolyApproach_SD_cartpole",
@@ -322,7 +342,7 @@
       "source": "examples/terminalRegion/example_termReg_nonlinSysPolyApproach_SD_cartpole.m",
       "algorithm": "terminalRegion",
       "status": "executed",
-      "seconds": 55.4647778,
+      "seconds": 52.64538,
       "checks": {
         "res_sampledInputConstraints": true
       },
@@ -331,10 +351,20 @@
       ],
       "error": "",
       "exportNotes": "",
-      "executionGroup": "licensed-terminal (MOSEK available)",
-      "solverNotes": [
-        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
-      ]
+      "executionGroup": "warning-terminal",
+      "warningResolution": {
+        "date": "2026-11-02",
+        "validation": "warning-terminal-validation.json",
+        "changes": "CORA finite-order termination fix; benchmark settings retained"
+      },
+      "priorAttempts": [
+        {
+          "log": "attempt-01.log.gz",
+          "statusFile": "attempt-01-status.json"
+        }
+      ],
+      "retryNotes": "retry-notes.txt",
+      "solverNotes": []
     },
     {
       "id": "example_termReg_subpaving_artificialSystem",
@@ -696,19 +726,29 @@
       "source": "testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach",
       "algorithm": "testTerminalRegion",
       "status": "passed",
-      "seconds": 23.4818096,
+      "seconds": 30.1145632,
       "checks": {
         "passed": true,
         "failed": false,
         "incomplete": false
       },
       "figures": [],
-      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 22.9988\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   22.9988 seconds testing time.\n\n",
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Linearization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 26.5852\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   26.5852 seconds testing time.\n\n",
       "exportNotes": "",
-      "executionGroup": "licensed-terminal (MOSEK available)",
-      "solverNotes": [
-        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
-      ]
+      "executionGroup": "warning-terminal",
+      "warningResolution": {
+        "date": "2026-11-02",
+        "validation": "warning-terminal-validation.json",
+        "changes": "CORA finite-order termination fix; benchmark settings retained"
+      },
+      "priorAttempts": [
+        {
+          "log": "attempt-01.log.gz",
+          "statusFile": "attempt-01-status.json"
+        }
+      ],
+      "retryNotes": "retry-notes.txt",
+      "solverNotes": []
     },
     {
       "id": "testTerminalRegion_TestNonlinSysOpt_Polynomialization_basedApproach",
@@ -716,19 +756,29 @@
       "source": "testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach",
       "algorithm": "testTerminalRegion",
       "status": "passed",
-      "seconds": 45.5338593,
+      "seconds": 57.1863192,
       "checks": {
         "passed": true,
         "failed": false,
         "incomplete": false
       },
       "figures": [],
-      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 45.0106\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   45.0106 seconds testing time.\n\n",
+      "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testTerminalRegion/TestNonlinSysOpt_Polynomialization_basedApproach'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 56.5016\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   56.5016 seconds testing time.\n\n",
       "exportNotes": "",
-      "executionGroup": "licensed-terminal (MOSEK available)",
-      "solverNotes": [
-        "CORA emitted an abstraction-error-order warning during verification; inspect the full log."
-      ]
+      "executionGroup": "warning-terminal",
+      "warningResolution": {
+        "date": "2026-11-02",
+        "validation": "warning-terminal-validation.json",
+        "changes": "CORA finite-order termination fix; benchmark settings retained"
+      },
+      "priorAttempts": [
+        {
+          "log": "attempt-01.log.gz",
+          "statusFile": "attempt-01-status.json"
+        }
+      ],
+      "retryNotes": "retry-notes.txt",
+      "solverNotes": []
     }
   ],
   "runGroups": [
@@ -780,6 +830,62 @@
         "exampleCount": 6,
         "unitTestCount": 16
       }
+    },
+    {
+      "id": "warning-terminal",
+      "caseCount": 5,
+      "metadata": {
+        "date": "2026-11-02",
+        "matlab": "24.2.0.3212159 (R2024b) Update 9",
+        "seed": 20261019.0,
+        "AROCCommit": "6ba0295754d935b2bf540fab904ebc235a2d7a5c",
+        "CORA": "v2026.0.1",
+        "YALMIP": "R20250626",
+        "CasADi": "3.7.2",
+        "convexSolver": "MOSEK 11.0; upstream solver selections retained",
+        "mosekAvailability": "Renewed MOSEK license retained; graph-reachability fix for infinite abstraction orders in isolated CORA copy",
+        "exampleCount": 3,
+        "unitTestCount": 2
+      },
+      "validation": {
+        "status": "passed",
+        "date": "2026-11-02",
+        "examples": 3,
+        "testSectionsPassed": 2,
+        "abstractionOrderWarningOccurrences": 0,
+        "regression": {
+          "fixturesMatched": 104,
+          "spuriousWarningsAvoided": 31,
+          "ordersIncludingInfPreserved": true
+        },
+        "terminalGeometryCompared": [
+          {
+            "case": "example_termReg_nonlinSysOpt_SD_cart",
+            "set": "terminalRegionLin",
+            "maximumAbsoluteDifference": 0.0
+          },
+          {
+            "case": "example_termReg_nonlinSysOpt_SD_cart",
+            "set": "terminalRegionPoly",
+            "maximumAbsoluteDifference": 0.0
+          },
+          {
+            "case": "example_termReg_nonlinSysLinApproach_SD_robotArm",
+            "set": "terminalRegion",
+            "maximumAbsoluteDifference": 0.0
+          },
+          {
+            "case": "example_termReg_nonlinSysPolyApproach_SD_cartpole",
+            "set": "terminalRegion",
+            "maximumAbsoluteDifference": 0.0
+          }
+        ],
+        "comparisonTolerance": {
+          "relative": 1e-09,
+          "absolute": 1e-10
+        }
+      }
     }
-  ]
+  ],
+  "warningResolutionDate": "2026-11-02"
 }

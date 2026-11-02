@@ -1,0 +1,16 @@
+{
+  "id": "example_termReg_nonlinSysLinApproach_SD_robotArm",
+  "kind": "example",
+  "source": "examples/terminalRegion/example_termReg_nonlinSysLinApproach_SD_robotArm.m",
+  "algorithm": "terminalRegion",
+  "status": "executed",
+  "seconds": 132.4820525,
+  "checks": {
+    "res_sampledInputConstraints": true
+  },
+  "figures": [
+    "figure-01.png"
+  ],
+  "error": "",
+  "exportNotes": ""
+}

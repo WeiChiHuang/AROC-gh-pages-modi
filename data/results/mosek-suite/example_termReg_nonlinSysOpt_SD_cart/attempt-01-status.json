@@ -1,0 +1,14 @@
+{
+  "id": "example_termReg_nonlinSysOpt_SD_cart",
+  "kind": "example",
+  "source": "examples/terminalRegion/example_termReg_nonlinSysOpt_SD_cart.m",
+  "algorithm": "terminalRegion",
+  "status": "executed",
+  "seconds": 60.3225313,
+  "checks": {},
+  "figures": [
+    "figure-01.png"
+  ],
+  "error": "",
+  "exportNotes": ""
+}

@@ -1,0 +1,16 @@
+{
+  "id": "example_termReg_nonlinSysPolyApproach_SD_cartpole",
+  "kind": "example",
+  "source": "examples/terminalRegion/example_termReg_nonlinSysPolyApproach_SD_cartpole.m",
+  "algorithm": "terminalRegion",
+  "status": "executed",
+  "seconds": 55.4647778,
+  "checks": {
+    "res_sampledInputConstraints": true
+  },
+  "figures": [
+    "figure-01.png"
+  ],
+  "error": "",
+  "exportNotes": ""
+}
