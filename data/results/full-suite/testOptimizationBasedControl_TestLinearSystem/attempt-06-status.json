@@ -1,0 +1,16 @@
+{
+  "id": "testOptimizationBasedControl_TestLinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestLinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "rejected-no-search",
+  "seconds": 18.717578,
+  "checks": {
+    "passed": true,
+    "failed": false,
+    "incomplete": false
+  },
+  "figures": [],
+  "error": "Rejected before publication: solver returned without any actual search iteration.",
+  "exportNotes": ""
+}

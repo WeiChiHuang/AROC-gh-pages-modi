@@ -1,0 +1,12 @@
+{
+  "id": "example_optBasedContr_car",
+  "kind": "example",
+  "source": "examples/optimizationBasedControl/example_optBasedContr_car.m",
+  "algorithm": "optimizationBasedControl",
+  "status": "interrupted",
+  "seconds": 0,
+  "checks": {},
+  "figures": [],
+  "error": "Superseded by feasibility-preserving extreme-barrier MADS; incomplete normalized SQP point and source retained, not accepted.",
+  "exportNotes": ""
+}

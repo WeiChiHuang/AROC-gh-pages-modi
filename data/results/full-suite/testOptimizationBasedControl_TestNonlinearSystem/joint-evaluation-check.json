@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "probeCount": 3,
+  "checks": [
+    {
+      "objectiveDifference": 0,
+      "constraintDifference": 0,
+      "originalObjective": 0.0083383867263894847,
+      "originalConstraintViolation": 4.1667230799014021E-6
+    },
+    {
+      "objectiveDifference": 0,
+      "constraintDifference": 0,
+      "originalObjective": 0.0083383230145639663,
+      "originalConstraintViolation": 9.94233718742965E-7
+    },
+    {
+      "objectiveDifference": 0,
+      "constraintDifference": 0,
+      "originalObjective": 0.0083383291678010285,
+      "originalConstraintViolation": 2.3735923869450115E-6
+    }
+  ],
+  "objectiveTolerance": 1E-10,
+  "constraintTolerance": 1E-9,
+  "scope": "Deterministic local equivalence probes; final solution independently evaluated again"
+}

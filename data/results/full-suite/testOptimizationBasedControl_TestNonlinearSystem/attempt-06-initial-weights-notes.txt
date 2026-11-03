@@ -1,0 +1,1 @@
+This initializer was created by the rejected zero-search configuration before the actual-search gate was introduced. Its old provenance phrase "Accepted direct-search car example" was premature. It is preserved only as earlier-attempt evidence. The current test initializer will be taken from the new accepted car solve.

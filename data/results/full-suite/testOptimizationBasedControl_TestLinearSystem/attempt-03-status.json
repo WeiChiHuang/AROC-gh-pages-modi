@@ -1,0 +1,16 @@
+{
+  "id": "testOptimizationBasedControl_TestLinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestLinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "failed",
+  "seconds": 9.4885741,
+  "checks": {
+    "passed": false,
+    "failed": true,
+    "incomplete": true
+  },
+  "figures": [],
+  "error": "Error using fileread (line 10)\nCould not open file C:\\Users\\yongk\\Documents\\ChatGPT\\AROC-Website\\research\\warning-active-run\\testOptimizationBasedControl_TestLinearSystem\\solver-diagnostics.json. No\nsuch file or directory.\n\nError in run_warning_active_suite (line 84)\n        diag=jsondecode(fileread(fullfile(caseDir,'solver-diagnostics.json')));\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+  "exportNotes": ""
+}

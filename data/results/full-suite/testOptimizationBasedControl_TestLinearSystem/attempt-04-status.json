@@ -1,0 +1,16 @@
+{
+  "id": "testOptimizationBasedControl_TestLinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestLinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "interrupted",
+  "seconds": 9.4885741,
+  "checks": {
+    "passed": false,
+    "failed": true,
+    "incomplete": true
+  },
+  "figures": [],
+  "error": "Replaced by derivative-free search after unstable finite-difference iterations; saved checkpoint and stop identities retained.",
+  "exportNotes": ""
+}

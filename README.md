@@ -127,8 +127,18 @@ The loop now recognizes states unreachable from nonzero abstraction errors,
 whose correct asymptotic order is infinite. All 104 regression fixtures retain
 the same orders, and four saved terminal-region set matrices exactly match
 the earlier run. The patch, CORA license and validation JSON are linked under
-“Diagnostic warning fixes”. Optimization iteration-limit diagnostics remain
-visible until a replacement run passes its solver and original assertion checks.
+“Diagnostic warning fixes”. The remaining three optimizer records were replaced
+on 2026-11-03 after positive solver termination and the original checks. The
+linear reference uses GPS; nonlinear records use central-difference active-set
+optimization of supplied logarithmic LQR weights. The original objective, weight
+box, physical constraints, horizons and sampled checks are retained. Nonlinear
+function, step and constraint tolerances are 1e-6; termination uses the predicted
+objective-change criterion, which does not establish differentiable stationarity
+or a global optimum. Exact initial/final weights, stopping diagnostics, source
+patches and earlier attempts remain downloadable. The linear reference was run
+on 2026-11-02; the combined record update does not count it as an extra test.
+Current recorded cases have zero tracked diagnostic warnings. Case wall times
+exclude prior warm-start searches and shared setup; they are not speed rankings.
 
 ## Maintenance
 
@@ -145,6 +155,9 @@ website over HTTP for interactive playback; opening HTML with `file://` can
 block JSON loading. The original numerical record and its diagnostic warnings
 remain available. Traffic planning uses four discrete snapshots; the cart
 terminal-region comparison uses display order rather than physical time.
+Content revisions on animation, result and record links prevent browsers from
+combining new validation text with cached old data. The updated car playback is
+checked against its saved MAT trajectory samples before publication.
 
 The 2026-11-02 review also checked the actual browser at 1440×900, 390×844,
 and 360×800 viewports. All 18 animations were switched and scrubbed on desktop
@@ -152,6 +165,9 @@ and mobile; 13 method pages were checked at both sizes. Navigation, playback,
 pause, reset, speed, looping, data notes, long formulas and support-page overflow
 were inspected. These are responsive browser checks, not physical handset tests.
 The report and four actual screenshots are included in the website archive.
+A targeted 2026-11-03 browser check at 1440×900 and 390×844 verified the
+updated zero-warning record, source links, car autoplay and mobile overflow;
+its report and four new screenshots are retained separately.
 
 `styles/cora-theme.css` aligns the visual language with the CORA website:
 Newsreader headings, Bootstrap body text, dark navigation, white figure panels

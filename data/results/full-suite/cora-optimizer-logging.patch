@@ -1,0 +1,14 @@
+--- a/global/macros/CORA_WARNINGS_ENABLED.m
++++ b/global/macros/CORA_WARNINGS_ENABLED.m
+@@ -104,8 +104,9 @@
+         res = true;
+     
+     case 'CORA:deprecated'
+-        % controls deprecation warnings
+-        res = true;
++        % Quiet only legacy-API notices during parallel object serialization.
++        % All numerical, solver and abstraction diagnostics remain enabled.
++        res = false;
+     
+     case 'CORA:redundant'
+         % controls redundancy warnings

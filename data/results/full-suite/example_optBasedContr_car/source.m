@@ -9,7 +9,7 @@ Opts = [];
 
 Opts.N = 10;                    % number of time steps  
 Opts.reachSteps = 12;           % number of reachability steps
-Opts.maxIter = 10;              % max number of iterations for optimization
+Opts.maxIter = 250;              % max number of iterations for optimization
 Opts.bound = 10000;             % diff. bet. upper and lower bound of vars.
 Opts.refTraj.Q = 10*eye(4);     % state weighting matrix (reference traj.)
 Opts.refTraj.R = 1/10*eye(2);   % input weighting matrix (reference traj.)

@@ -1,0 +1,12 @@
+{
+  "id": "example_optBasedContr_car",
+  "kind": "example",
+  "source": "examples/optimizationBasedControl/example_optBasedContr_car.m",
+  "algorithm": "optimizationBasedControl",
+  "status": "interrupted",
+  "seconds": 0,
+  "checks": {},
+  "figures": [],
+  "error": "Preserved as attempt-08; resume using audited shared reach evaluation and eight workers.",
+  "exportNotes": ""
+}

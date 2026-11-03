@@ -1,0 +1,5 @@
+# Preserve patch payloads and exact executed optimizer snapshots in downloads.
+data/results/**/aroc-optimizer.patch -text
+data/results/**/cora-*.patch -text
+data/results/**/*optimizer-source.m -text
+data/results/**/*evaluation-source.m -text

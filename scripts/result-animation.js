@@ -93,7 +93,8 @@
         host.querySelector('.animation-current-links')?.remove();
         if(host.dataset.showLinks==='true'){
           const links=document.createElement('p');links.className='animation-links animation-current-links';const base=new URL(url,location.href);
-          for(const [title,href] of [['Run record & checks','../../pages/reproduction/index.html#'+data.caseId],['MATLAB source','../results/full-suite/'+data.caseId+'/source.m'],['Animated SVG',base.href.replace(/\.json$/,'.svg')],['Animation data',base.href]]){const a=document.createElement('a');a.textContent=title;a.href=new URL(href,base).href;if(title==='Animated SVG'||title==='Animation data')a.download='';links.append(a);}
+          const svgUrl=new URL(base.href);svgUrl.pathname=svgUrl.pathname.replace(/\.json$/,'.svg');
+          for(const [title,href] of [['Run record & checks','../../pages/reproduction/index.html'+base.search+'#'+data.caseId],['MATLAB source','../results/full-suite/'+data.caseId+'/source.m'+base.search],['Animated SVG',svgUrl.href],['Animation data',base.href]]){const a=document.createElement('a');a.textContent=title;a.href=new URL(href,base).href;if(title==='Animated SVG'||title==='Animation data')a.download='';links.append(a);}
           host.append(links);
         }
         host.dispatchEvent(new CustomEvent('animationready',{detail:{caseId:data.caseId}}));

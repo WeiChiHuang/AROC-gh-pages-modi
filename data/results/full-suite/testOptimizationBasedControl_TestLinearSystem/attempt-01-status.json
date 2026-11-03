@@ -1,0 +1,16 @@
+{
+  "id": "testOptimizationBasedControl_TestLinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestLinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "passed",
+  "seconds": 688.9741626,
+  "checks": {
+    "passed": true,
+    "failed": false,
+    "incomplete": false
+  },
+  "figures": [],
+  "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testOptimizationBasedControl/TestLinearSystem'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 688.0111\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   688.0111 seconds testing time.\n\n",
+  "exportNotes": ""
+}

@@ -1,0 +1,8 @@
+{
+  "iteration": 2,
+  "fval": 6.367639305844272,
+  "meshsize": 1e-07,
+  "funccount": 4079,
+  "method": "Increase penalty",
+  "scope": "Observed pattern-search callback; fval can be augmented-Lagrangian merit rather than the original objective."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "testOptimizationBasedControl_TestLinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestLinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "interrupted",
+  "seconds": 0,
+  "checks": {},
+  "figures": [],
+  "error": "Restarted direct search with stronger augmented-Lagrangian penalty after inadequate feasibility restoration. Physical constraints and tolerances are unchanged.",
+  "exportNotes": ""
+}

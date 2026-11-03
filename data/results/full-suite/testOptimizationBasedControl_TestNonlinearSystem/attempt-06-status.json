@@ -1,0 +1,12 @@
+{
+  "id": "testOptimizationBasedControl_TestNonlinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestNonlinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "rejected-no-search",
+  "seconds": 0,
+  "checks": {},
+  "figures": [],
+  "error": "Rejected before publication: solver returned without any actual search iteration.",
+  "exportNotes": ""
+}

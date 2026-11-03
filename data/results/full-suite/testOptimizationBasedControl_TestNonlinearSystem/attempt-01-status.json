@@ -1,0 +1,16 @@
+{
+  "id": "testOptimizationBasedControl_TestNonlinearSystem",
+  "kind": "unit-test",
+  "source": "testOptimizationBasedControl/TestNonlinearSystem",
+  "algorithm": "testOptimizationBasedControl",
+  "status": "passed",
+  "seconds": 1426.2811589,
+  "checks": {
+    "passed": true,
+    "failed": false,
+    "incomplete": false
+  },
+  "figures": [],
+  "error": "  <a href=\"matlab:helpPopup('matlab.unittest.TestResult')\" style=\"font-weight:bold\">TestResult</a> with properties:\n\n          Name: 'testOptimizationBasedControl/TestNonlinearSystem'\n        Passed: 1\n        Failed: 0\n    Incomplete: 0\n      Duration: 1.4249e+03\n       Details: [1x1 struct]\n\nTotals:\n   1 Passed, 0 Failed, 0 Incomplete.\n   1424.8862 seconds testing time.\n\n",
+  "exportNotes": ""
+}
